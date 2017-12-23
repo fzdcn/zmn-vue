@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import {jump} from '../functions'
+  import {jump} from '../script/functions'
 
   export default {
     name: 'GoTop',

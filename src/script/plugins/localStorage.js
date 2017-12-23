@@ -1,4 +1,4 @@
-import {LOCAL_STORAGE_VERSION} from '../config/const'
+import {LOCAL_STORAGE_VERSION} from '../config'
 
 class LocalStorage {
   static install(Vue) {

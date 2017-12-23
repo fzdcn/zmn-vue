@@ -3,13 +3,13 @@
 
 import Vue from 'vue'
 import App from './App'
-import router from './router'
-import http from './plugins/http'
-import localStorage from './plugins/localStorage'
+import router from './script/router'
+import http from './script/plugins/http'
+import localStorage from './script/plugins/localStorage'
 import moment from 'moment'
-import store from './store'
+import store from './script/store'
 import VueLazyload from 'vue-lazyload'
-import {QI_NIU_CDN_DOMAIN} from './config/const'
+import {QI_NIU_CDN_DOMAIN} from './script/config'
 
 Vue.config.productionTip = false
 

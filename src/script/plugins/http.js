@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {API_BASE, DEBUG} from '../config/const'
+import {API_BASE, DEBUG} from '../config'
 import store from '../store'
 import router from '../router'
 import {showAlert} from  '../functions'

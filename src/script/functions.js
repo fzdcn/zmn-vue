@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import router from '../router'
+import router from './router'
 
 /**
  * 显示alert
@@ -40,17 +40,6 @@ export function setTitle(title) {
     }
     iframe.addEventListener('load', iframeCallback)
     document.body.appendChild(iframe)
-  }
-}
-
-/**
- * 返回上一步
- */
-export function goBack() {
-  if (window.history.length > 1) {
-    window.history.go(-1)
-  } else {
-    router.push({name: 'home'})
   }
 }
 
@@ -98,6 +87,11 @@ export function jump(querySelect = 'body', index = 0, offset = 0) {
   }
 }
 
+/**
+ * 获取 request 中的参数
+ * @param name
+ * @returns {string}
+ */
 export function requestGet(name) {
   let result = location.search.match(new RegExp("[\?\&]" + name + "=([^\&]+)", "i"));
   if (result == null || result.length < 1) {
