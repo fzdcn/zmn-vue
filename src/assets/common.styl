@@ -1,0 +1,117 @@
+@import "variable.styl"
+
+body
+  font-family -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif
+  background-color $white
+  line-height 1.4
+  font-size $fontSizeMedium
+
+a
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+.green
+  color $green
+
+.bg-green
+  background-color $green
+  color $white
+
+.blue
+  color $blue
+
+.bg-blue
+  background-color $blue
+  color $white
+
+.yellow
+  color $yellow
+
+.bg-yellow
+  background-color $yellow
+  color $white
+
+.red
+  color $red
+
+.bg-red
+  background-color $red
+  color $white
+
+.grey
+  color $darkGrey
+
+.bg-grey
+  background-color $grey
+
+.white
+  color $white
+
+.bg-white
+  background-color $white
+
+.btn
+  padding px2rem(11px) px2rem(32px)
+  text-align center
+  color $white
+  display inline-block
+  &:link
+    color $white
+  &:visited
+    color $white
+  &:hover
+    color $white
+  &:active
+    color $white
+  &.btn-sm
+    font-size $fontSizeSmall
+  &.btn-lg
+    padding px2rem(20px) px2rem(80px)
+  &.btn-block
+    display block
+    width: 100%
+  &.btn-red
+    background-color $red
+  &.btn-green
+    background-color $green
+  &.btn-blue
+    background-color $blue
+  &.btn-grey
+    background-color $white
+    border 1px solid $darkGrey
+    color $darkGrey
+    &:link
+      color $darkGrey
+    &:visited
+      color $darkGrey
+    &:hover
+      color $darkGrey
+    &:active
+      color $darkGrey
+
+.text-center
+  text-align center
+
+.text-left
+  text-align left
+
+.text-right
+  text-align right
+
+.text-bold
+  font-weight bold
+
+.center-img
+  display flex
+  justify-content center
+  align-items center
+  overflow hidden
+  img
+    min-width 100%
+    min-height 100%
+
+.image-max-width-100
+  img
+    max-width 100%
+    height: auto !important;
+  canvas
+    max-width 100%
