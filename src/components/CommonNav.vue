@@ -13,7 +13,7 @@
     props: {
       navTitle: {
         type: String,
-        default: '公共导航'
+        default: '苏州蚕食网络科技有限公司'
       }
     },
     data(){

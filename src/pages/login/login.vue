@@ -10,9 +10,7 @@
       <div class="input-con">
         <div class="loing-tab">
           <ul>
-            <li @click="currentIndex = index;" v-for="(item,index) in tab"
-                :class="[{'fr': index == 1},{'selected-color': index == currentIndex},{'cancel-color': index != currentIndex}]"
-                style="margin: auto;width: 100%;text-align: center;">
+            <li v-for="(item,index) in tab" class="text-center">
               {{ item }}
             </li>
           </ul>
@@ -38,12 +36,13 @@
       </div>
     </div>
     <div class="but one" @click="submit">登录</div>
-    <div @click="goRegister" class="but two">注册</div>
+    <div @click="this.$router.push({})" class="but two">注册</div>
   </div>
 </template>
 
 <script>
   import {showAlert} from '../../config/functions'
+  import {isWeChat} from '../../config/functions'
   export default {
     name: 'Login',
     components: {},
@@ -76,7 +75,7 @@
         this.$httpPost('login/index', {
           cellphone: this.form.phone,
           password: this.form.password,
-          type: tools.isWeChatBroswer() ? 25 : 20
+          type: isWeChat ? 25 : 20
         }).then((data) => {
           this.$store.dispatch('userSignIn', data);
           showAlert('登陆成功！', 'success');
@@ -90,63 +89,67 @@
         })
       },
       codeLogin: function () {
-        http.post('login/captcha-index', {
+        this.$httpPost('login/captcha-index', {
           cellphone: this.form.phone,
           captcha: this.form.password,
-          type: tools.isWeChatBroswer() ? 25 : 20
-        }, function (data) {
-          stores.setUserObj(data);
-          tools.confirm('登录成功', 'success', false, function () {
-            tools.goBack();
-          });
+          type: isWeChat ? 25 : 20
+        }).then((data) => {
+          this.$store.dispatch('userSignIn', data);
+          showAlert('登陆成功！', 'success');
+          let redirectName = this.$store.getters.loginRedirect;
+          if (!redirectName) {
+            redirectName = 'home';
+          }
+          this.$router.replace({path: redirectName});
+        }).catch((error) => {
+          console.log(error);
         })
       },
       // 发送验证码
       sendCode: function () {
         if (!this.form.phone) {
-          tools.alert('手机号不能为空', 'warning');
+          showAlert('手机号不能为空', 'warning');
           return false;
         }
         if (!/^1[3|4|5|7|8][0-9]{9}$/.test(this.form.phone)) {
-          tools.alert('手机格式不正确', 'warning');
+          showAlert('手机格式不正确', 'warning');
           return false;
         }
-        http.post('login/fast-send-sms', {
+        this.$httpPost('login/fast-send-sms', {
           cellphone: this.form.phone
-        }, function (data) {
-          vm.sendSmsTime = 60;
-          vm.sendSmsInterval = setInterval(function () {
-            vm.sendSmsTime--;
-            if (vm.sendSmsTime <= 0) {
-              clearInterval(vm.sendSmsInterval);
+        }).then((data) => {
+          this.sendSmsTime = 60;
+          this.sendSmsInterval = setInterval(() => {
+            this.sendSmsTime--;
+            if (this.sendSmsTime <= 0) {
+              clearInterval(this.sendSmsInterval);
             }
           }, 1000);
-          tools.alert(data, 'success');
+          showAlert(data, 'success');
+        }).catch((error) => {
+          console.log(error);
         })
       },
       // 表单验证
       verification: function () {
         if (!this.form.phone) {
-          tools.alert('手机号不能为空', 'warning');
+          showAlert('手机号不能为空', 'warning');
           return false;
         }
         if (!/^1[3|4|5|7|8][0-9]{9}$/.test(this.form.phone)) {
-          tools.alert('手机格式不正确', 'warning');
+          showAlert('手机格式不正确', 'warning');
           return false;
         }
         if (!this.form.password) {
-          if (this.currentIndex == 0) {
-            tools.alert('密码不能为空', 'warning');
+          if (this.currentIndex === 0) {
+            showAlert('密码不能为空', 'warning');
             return false;
           } else {
-            tools.alert('短信验证码不能为空', 'warning');
+            showAlert('短信验证码不能为空', 'warning');
             return false;
           }
         }
         return true;
-      },
-      goRegister: function () {
-        window.location.href = window.location.origin + "/wx/register.html";
       }
     },
     mounted: function () {
@@ -170,7 +173,6 @@
       .set-on
         text-align center
         font-size px2rem(36px)
-
     .wx-login
       margin-top px2rem(89px)
       .top-logo
@@ -198,10 +200,9 @@
               height px2rem(50px)
               line-height px2rem(50px)
               font-size px2rem(32px)
-            .selected-color
               color $fc-OOa84c
-            .cancel-color
-              color $fc-999
+              margin auto
+              width 100%
           .liner
             display inline-block
             height px2rem(36px)
