@@ -7,13 +7,13 @@ import store from '../store'
 
 Vue.use(Router)
 const Home = () => import('../pages/app/Home');
-const Login = () => import('../pages/login/login');
+const Login = () => import('../pages/login/Login');
+const Register = () => import('../pages/login/Register');
 
 const routes = [
   {path: '/', redirect: {name: 'home'}},
-
   {path: '/login', name: 'login', component: Login, meta: {auth: false}},
-
+  {path: '/register', name: 'register', component: Register, meta: {auth: false}},
   {path: '/home', name: 'home', component: Home, meta: {auth: false, keepAlive: true}}
 ];
 

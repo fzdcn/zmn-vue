@@ -36,13 +36,12 @@
       </div>
     </div>
     <div class="but one" @click="submit">登录</div>
-    <div @click="this.$router.push({})" class="but two">注册</div>
+    <div @click="this.$router.push({name:'register'})" class="but two">注册</div>
   </div>
 </template>
 
 <script>
-  import {showAlert} from '../../config/functions'
-  import {isWeChat} from '../../config/functions'
+  import {showAlert,isWeChat} from '../../config/functions'
   export default {
     name: 'Login',
     components: {},
@@ -52,7 +51,6 @@
           phone: '',
           password: '',
         },
-        // tab: ['账号登录', '短信登录'],
         tab: ['账号登录'],
         currentIndex: 0,
         sendSmsTime: 0,
@@ -173,6 +171,7 @@
       .set-on
         text-align center
         font-size px2rem(36px)
+
     .wx-login
       margin-top px2rem(89px)
       .top-logo

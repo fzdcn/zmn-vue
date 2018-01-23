@@ -5,19 +5,15 @@
 </template>
 
 <script>
-  import swiper from './_swiper'
+  import Swiper from './_Swiper'
   export default {
     name: 'Home',
     components: {
-      swiper
+      Swiper
     },
     data () {
       return {}
     },
-    methods: {
-      /*getAA () {
-       this.$store.getters.accessToken
-       }*/
-    }
+    methods: {}
   }
 </script>
