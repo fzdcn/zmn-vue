@@ -1,23 +1,21 @@
+/**
+ * Created by Tome on 2018/1/22.
+ */
 import Vue from 'vue'
 import Router from 'vue-router'
-import store from './store'
+import store from '../store'
 
 Vue.use(Router)
-
-const Home = () => import('../pages/app/Home')
-const Login = () => import('../pages/app/Login')
-
-const GoodsShopHome = () => import('../pages/goods-shop/Home')
+const Home = () => import('../pages/app/Home');
+const Login = () => import('../pages/login/login');
 
 const routes = [
   {path: '/', redirect: {name: 'home'}},
 
   {path: '/login', name: 'login', component: Login, meta: {auth: false}},
 
-  {path: '/home', name: 'home', component: Home, meta: {auth: false, keepAlive: true}},
-
-  {path: '/shop-goods', name: 'shop-goods-home', component: GoodsShopHome, meta: {auth: false, keepAlive: true}},
-]
+  {path: '/home', name: 'home', component: Home, meta: {auth: false, keepAlive: true}}
+];
 
 let router = new Router({
   mode: 'history',

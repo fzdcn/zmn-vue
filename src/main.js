@@ -1,20 +1,19 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-
 import Vue from 'vue'
 import App from './App'
-import router from './script/router'
-import http from './script/plugins/http'
-import localStorage from './script/plugins/localStorage'
+import router from './router'
+import http from './config/plugins/http'
+import localStorage from './config/plugins/localStorage'
 import moment from 'moment'
-import store from './script/store'
+import store from './store'
 import VueLazyload from 'vue-lazyload'
-import {QI_NIU_CDN_DOMAIN} from './script/config'
+import {QI_NIU_CDN_DOMAIN} from './config/config'
 
 Vue.config.productionTip = false
 
-Vue.use(http)
-Vue.use(localStorage)
+Vue.use(http);
+Vue.use(localStorage);
 Vue.use(VueLazyload, {
   preLoad: 1.3,
   error: '/static/images/lazy-load.png',

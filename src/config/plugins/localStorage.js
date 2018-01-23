@@ -1,3 +1,6 @@
+/**
+ * Created by Tome on 2018/1/22.
+ */
 import {LOCAL_STORAGE_VERSION} from '../config'
 
 class LocalStorage {

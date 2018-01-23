@@ -1,21 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>蚕食智能生活服务</title>
-    <script>
-      function getScreenWidth(){return window.screen.width>window.innerWidth?window.innerWidth:window.screen.width}function setFontSize(){document.getElementsByTagName("html")[0].style.fontSize=((getScreenWidth()/10)<67.5?(getScreenWidth()/10):67.5)+'px';}setFontSize();window.onresize=function(){setFontSize();}
-    </script>
-    <link href="/static/css/loader.min.css" rel="stylesheet">
-  </head>
-  <body>
-    <div id="loader">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>蚕食智能生活服务</title>
+  <script>
+    function getScreenWidth() {
+      return window.screen.width > window.innerWidth ? window.innerWidth : window.screen.width
+    }
+    function setFontSize() {
+      document.getElementsByTagName("html")[0].style.fontSize = ((getScreenWidth() / 10) < 67.5 ? (getScreenWidth() / 10) : 67.5) + 'px';
+    }
+    setFontSize();
+    window.onresize = function () {
+      setFontSize();
+    }
+  </script>
+  <link href="/static/css/loader.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="loader">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+</body>
 </html>
