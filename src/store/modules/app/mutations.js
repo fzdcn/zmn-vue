@@ -14,6 +14,7 @@ function setUser(state, user) {
   window.localStorage.setItem('accessToken', user.access_token);
   state.user = user;
   state.accessToken = user.access_token
+  console.log(user.access_token)
 }
 
 const mutations = {

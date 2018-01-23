@@ -10,7 +10,7 @@
       <div class="input-con">
         <div class="loing-tab">
           <ul>
-            <li v-for="(item,index) in tab" class="text-center">
+            <li v-for="item in tab" class="text-center">
               {{ item }}
             </li>
           </ul>
@@ -36,12 +36,12 @@
       </div>
     </div>
     <div class="but one" @click="submit">登录</div>
-    <div @click="this.$router.push({name:'register'})" class="but two">注册</div>
+    <div @click="$router.push({name:'register'})" class="but two">注册</div>
   </div>
 </template>
 
 <script>
-  import {showAlert,isWeChat} from '../../config/functions'
+  import {showAlert, isWeChat} from '../../config/functions'
   export default {
     name: 'Login',
     components: {},
@@ -58,40 +58,17 @@
       }
     },
     methods: {
-      submit: function () {
-        if (this.currentIndex == 0) {
-          if (this.verification()) {
-            this.passWordLogin();
-          }
-        } else {
-          if (this.verification()) {
-            this.codeLogin();
-          }
+      submit() {
+        if (this.verification()) {
+          this.passWordLogin();
         }
       },
-      passWordLogin: function () {
+      passWordLogin() {
         this.$httpPost('login/index', {
           cellphone: this.form.phone,
           password: this.form.password,
           type: isWeChat ? 25 : 20
-        }).then((data) => {
-          this.$store.dispatch('userSignIn', data);
-          showAlert('登陆成功！', 'success');
-          let redirectName = this.$store.getters.loginRedirect;
-          if (!redirectName) {
-            redirectName = 'home';
-          }
-          this.$router.replace({path: redirectName});
-        }).catch((error) => {
-          console.log(error);
-        })
-      },
-      codeLogin: function () {
-        this.$httpPost('login/captcha-index', {
-          cellphone: this.form.phone,
-          captcha: this.form.password,
-          type: isWeChat ? 25 : 20
-        }).then((data) => {
+        }).then(({data}) => {
           this.$store.dispatch('userSignIn', data);
           showAlert('登陆成功！', 'success');
           let redirectName = this.$store.getters.loginRedirect;
@@ -104,7 +81,7 @@
         })
       },
       // 发送验证码
-      sendCode: function () {
+      sendCode() {
         if (!this.form.phone) {
           showAlert('手机号不能为空', 'warning');
           return false;
@@ -115,7 +92,7 @@
         }
         this.$httpPost('login/fast-send-sms', {
           cellphone: this.form.phone
-        }).then((data) => {
+        }).then(({data}) => {
           this.sendSmsTime = 60;
           this.sendSmsInterval = setInterval(() => {
             this.sendSmsTime--;
@@ -129,7 +106,7 @@
         })
       },
       // 表单验证
-      verification: function () {
+      verification() {
         if (!this.form.phone) {
           showAlert('手机号不能为空', 'warning');
           return false;
@@ -170,7 +147,7 @@
       border-bottom: 1px solid $fc-e6e6e6;
       .set-on
         text-align center
-        font-size px2rem(36px)
+        font-size $f36
 
     .wx-login
       margin-top px2rem(89px)
@@ -199,16 +176,9 @@
               height px2rem(50px)
               line-height px2rem(50px)
               font-size px2rem(32px)
-              color $fc-OOa84c
+              color $fc-00a84c
               margin auto
               width 100%
-          .liner
-            display inline-block
-            height px2rem(36px)
-            border 1px solid $fc-e6e6e6
-            position absolute
-            left 50%
-            top px2rem(7px)
         .phone
           border-bottom 1px solid $fc-e6e6e6
           margin: 0 px2rem(55px) px2rem(20px) px2rem(55px)

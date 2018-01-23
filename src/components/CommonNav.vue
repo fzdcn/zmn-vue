@@ -37,7 +37,7 @@
     line-height px2rem(88px)
     background-color $white
     z-index 100
-    border-bottom: 1px solid $e6e6e6;
+    border-bottom: 1px solid $fc-e6e6e6;
     .set-on
       text-align center
       font-size px2rem(36px)
