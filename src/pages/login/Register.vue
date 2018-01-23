@@ -32,14 +32,6 @@
     data(){
       return {
         name: "注册",
-        validate_code: {
-          attribute1: '',
-          attribute2: '',
-          operate: '',
-          inputValue: ''
-        },
-        imgCode: '',
-        uuid: '',
         sendSmsTime: 0,
         sendSmsInterval: false,
         confirmPassword: '',
@@ -53,14 +45,6 @@
       }
     },
     methods: {
-      getUuid() {
-        return Date.parse(new Date());
-      },
-      pushCode() {
-        let num = this.getUuid();
-        this.uuid = num;
-        this.imgCode = http.baseUrl + 'captcha/get?uuid=' + num;
-      },
       sendSms() {
         if (!this.form.cellphone) {
           showAlert('手机号不能为空', 'warning');
@@ -72,8 +56,6 @@
         }
         if (this.sendSmsTime <= 0) {
           this.$httpPost('login/fast-send-sms', {
-            image_code: this.validate_code.inputValue,
-            uuid: this.uuid,
             cellphone: this.form.cellphone
           }).then(({data}) => {
             showAlert(data, 'success');

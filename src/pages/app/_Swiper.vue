@@ -1,11 +1,11 @@
 <template>
   <keep-alive include="Swiper">
-      <swiper :options="swiperOption">
-        <swiper-slide class="text-center" v-for="(slide,index) in swiperSlides" :key="index">
-          <img :src="slide.src">
-        </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-      </swiper>
+    <swiper :options="swiperOption">
+      <swiper-slide class="text-center" v-for="(slide,index) in swiperSlides" :key="index">
+        <img :src="slide.src">
+      </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
   </keep-alive>
 </template>
 
@@ -21,29 +21,29 @@
     data() {
       return {
         swiperOption: {
-          effect : 'flip',
+          effect: 'flip',
           autoplay: {
-           delay: 3000,
-           disableOnInteraction: false,
-           },
+            delay: 3000,
+            disableOnInteraction: false,
+          },
           loop: false,
           pagination: {
             el: '.swiper-pagination',
             dynamicBullets: true,
-            type:'bullets'
+            type: 'bullets'
           }
         },
         swiperSlides: [],
       }
     },
     methods: {
-      getBannerImg: function () {
+      getBannerImg() {
         this.$httpGet('home-page/banner', {
           type: 30
-        }).then((data) => {
-          this.swiperSlides = data.data.values;
+        }).then(({data}) => {
+          this.swiperSlides = data.values;
         }).catch((error) => {
-
+          console.log(error);
         })
       }
     },

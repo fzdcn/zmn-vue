@@ -22,7 +22,9 @@
           <div class="phone">
             <input type="password" placeholder="请输入密码" class="input-style" v-model="form.password">
           </div>
-          <div class="forget"><a href="forget-password.html"> 忘记密码？</a></div>
+          <div class="forget">
+            <router-link :to="{name:'forget-password'}"> 忘记密码？</router-link>
+          </div>
         </template>
         <template v-else>
           <div class="phone">
@@ -136,6 +138,9 @@
 <style lang="stylus" scoped>
   @import "../../assets/common.styl"
   .login
+    background $white
+    width 100%
+    padding-bottom px2rem(250px)
     .set
       width 100%
       position: fixed
