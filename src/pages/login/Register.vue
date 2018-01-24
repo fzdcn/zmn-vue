@@ -1,5 +1,5 @@
 <template>
-  <div class="Register">
+  <div class="register">
     <common-nav :navTitle="name"></common-nav>
     <div class="register-content">
       <div class="telphone">
@@ -183,7 +183,7 @@
         line-height px2rem(50px)
         text-align center
         width px2rem(150px)
-        font-size px2rem(24px)
+        font-size $f24
         color $fc-00a84c
         border 1px solid $fc-00a84c
 

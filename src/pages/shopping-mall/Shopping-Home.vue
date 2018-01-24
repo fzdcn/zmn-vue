@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import Banner from '../app/_Swiper'
+  import Banner from '../../components/_Swiper'
 
   export default {
     name: 'shopping-home',
@@ -89,4 +89,4 @@
       color: #00a84c
   .ban
     margin-top: px2rem(89px)
-</style>    
+</style>

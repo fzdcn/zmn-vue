@@ -1,11 +1,11 @@
 <template>
   <keep-alive include="Swiper">
-      <swiper :options="swiperOption">
-        <swiper-slide class="text-center" v-for="(slide,index) in bannerImg" :key="index">
-          <img :src="slide.src">
-        </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-      </swiper>
+    <swiper :options="swiperOption">
+      <swiper-slide class="text-center" v-for="(item,index) in bannerImgs" :key="index">
+        <img :src="item.src">
+      </swiper-slide>
+      <div class="swiper-pagination" slot="pagination"></div>
+    </swiper>
   </keep-alive>
 </template>
 
@@ -19,9 +19,8 @@
       swiperSlide
     },
     props: {
-      bannerImg: {
+      bannerImgs: {
         type: Array,
-        default: ['../../../static/images/commodity_shopping_loading@2x.png','../../../static/images/commodity_shopping_loading@2x.png']
       }
     },
     data() {
@@ -38,21 +37,10 @@
             dynamicBullets: true,
             type: 'bullets'
           }
-        }/*,
-        swiperSlides: [],*/
+        }
       }
     },
-    methods: {
-     /* getBannerImg: function () {
-        this.$httpGet('home-page/banner', {
-          type: 30
-        }).then((data) => {
-          this.swiperSlides = data.data.values;
-        }).catch((error) => {
-
-        })
-      }*/
-    },
+    methods: {},
     mounted() {
       /*this.getBannerImg();*/
     }

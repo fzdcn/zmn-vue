@@ -15,26 +15,15 @@
             </li>
           </ul>
         </div>
-        <template v-if="currentIndex == 0">
-          <div class="phone">
-            <input type="tel" placeholder="请输入手机号" class="input-style" v-model="form.phone">
-          </div>
-          <div class="phone">
-            <input type="password" placeholder="请输入密码" class="input-style" v-model="form.password">
-          </div>
-          <div class="forget">
-            <router-link :to="{name:'forget-password'}"> 忘记密码？</router-link>
-          </div>
-        </template>
-        <template v-else>
-          <div class="phone">
-            <input type="tel" placeholder="请输入手机号" class="input-style" v-model="form.phone">
-          </div>
-          <div class="number">
-            <input type="text" placeholder="请输入验证码" class="input-style" v-model="form.password">
-            <div class="yan" @click="sendCode">{{ sendSmsTime > 0 ? sendSmsTime : '发送验证码' }}</div>
-          </div>
-        </template>
+        <div class="phone">
+          <input type="tel" placeholder="请输入手机号" class="input-style" v-model="form.phone">
+        </div>
+        <div class="phone">
+          <input type="password" placeholder="请输入密码" class="input-style" v-model="form.password">
+        </div>
+        <div class="forget">
+          <router-link :to="{name:'forget-password'}"> 忘记密码？</router-link>
+        </div>
       </div>
     </div>
     <div class="but one" @click="submit">登录</div>
@@ -54,7 +43,6 @@
           password: '',
         },
         tab: ['账号登录'],
-        currentIndex: 0,
         sendSmsTime: 0,
         sendSmsInterval: false
       }
@@ -82,31 +70,6 @@
           console.log(error);
         })
       },
-      // 发送验证码
-      sendCode() {
-        if (!this.form.phone) {
-          showAlert('手机号不能为空', 'warning');
-          return false;
-        }
-        if (!/^1[3|4|5|7|8][0-9]{9}$/.test(this.form.phone)) {
-          showAlert('手机格式不正确', 'warning');
-          return false;
-        }
-        this.$httpPost('login/fast-send-sms', {
-          cellphone: this.form.phone
-        }).then(({data}) => {
-          this.sendSmsTime = 60;
-          this.sendSmsInterval = setInterval(() => {
-            this.sendSmsTime--;
-            if (this.sendSmsTime <= 0) {
-              clearInterval(this.sendSmsInterval);
-            }
-          }, 1000);
-          showAlert(data, 'success');
-        }).catch((error) => {
-          console.log(error);
-        })
-      },
       // 表单验证
       verification() {
         if (!this.form.phone) {
@@ -118,13 +81,8 @@
           return false;
         }
         if (!this.form.password) {
-          if (this.currentIndex === 0) {
-            showAlert('密码不能为空', 'warning');
-            return false;
-          } else {
-            showAlert('短信验证码不能为空', 'warning');
-            return false;
-          }
+          showAlert('密码不能为空', 'warning');
+          return false;
         }
         return true;
       }
@@ -180,7 +138,7 @@
             li
               height px2rem(50px)
               line-height px2rem(50px)
-              font-size px2rem(32px)
+              font-size $f32
               color $fc-00a84c
               margin auto
               width 100%
@@ -189,7 +147,7 @@
           margin: 0 px2rem(55px) px2rem(20px) px2rem(55px)
           .input-style
             line-height px2rem(60px)
-            font-size px2rem(28px)
+            font-size $f28
             color #999
             width 100%
           /* WebKit browsers */
@@ -210,7 +168,7 @@
           margin: 0 px2rem(55px) px2rem(20px) px2rem(55px)
           .input-style
             line-height px2rem(60px)
-            font-size px2rem(28px)
+            font-size $f28
             color $fc-999
             width 60%
           /* WebKit browsers */
@@ -231,14 +189,14 @@
             width px2rem(150px)
             line-height px2rem(60px)
             color $fc-00a84c
-            font-size px2rem(28px)
+            font-size $f28
             text-align center
         .forget
           text-align right
           width 100%
           a
             color $fc-00a84c
-            font-size px2rem(24px)
+            font-size $f24
             display inline-block
             height px2rem(24px)
             line-height px2rem(24px)
