@@ -1,11 +1,11 @@
 <template>
   <keep-alive include="Swiper">
-    <swiper :options="swiperOption">
-      <swiper-slide class="text-center" v-for="(slide,index) in swiperSlides" :key="index">
-        <img :src="slide.src">
-      </swiper-slide>
-      <div class="swiper-pagination" slot="pagination"></div>
-    </swiper>
+      <swiper :options="swiperOption">
+        <swiper-slide class="text-center" v-for="(slide,index) in bannerImg" :key="index">
+          <img :src="slide.src">
+        </swiper-slide>
+        <div class="swiper-pagination" slot="pagination"></div>
+      </swiper>
   </keep-alive>
 </template>
 
@@ -13,10 +13,16 @@
   import 'swiper/dist/css/swiper.css'
   import {swiper, swiperSlide} from 'vue-awesome-swiper'
   export default {
-    name: 'Swiper',
+    name: 'banner-element',
     components: {
       swiper,
       swiperSlide
+    },
+    props: {
+      bannerImg: {
+        type: Array,
+        default: ['../../../static/images/commodity_shopping_loading@2x.png','../../../static/images/commodity_shopping_loading@2x.png']
+      }
     },
     data() {
       return {
@@ -32,23 +38,23 @@
             dynamicBullets: true,
             type: 'bullets'
           }
-        },
-        swiperSlides: [],
+        }/*,
+        swiperSlides: [],*/
       }
     },
     methods: {
-      getBannerImg() {
+     /* getBannerImg: function () {
         this.$httpGet('home-page/banner', {
           type: 30
-        }).then(({data}) => {
-          this.swiperSlides = data.values;
+        }).then((data) => {
+          this.swiperSlides = data.data.values;
         }).catch((error) => {
-          console.log(error);
+
         })
-      }
+      }*/
     },
     mounted() {
-      this.getBannerImg();
+      /*this.getBannerImg();*/
     }
   }
 </script>
