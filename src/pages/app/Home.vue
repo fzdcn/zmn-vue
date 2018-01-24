@@ -17,15 +17,18 @@
     <div class="swiper-banner">
       <swiper :bannerImgs="bannerImgs"></swiper>
     </div>
+    <foot></foot>
   </div>
 </template>
 
 <script>
-  import Swiper from '../../components/_Swiper'
+  import Swiper from '../../components/Swiper'
+  import Foot from '../../components/Footer'
   export default {
     name: 'Home',
     components: {
-      Swiper
+      Swiper,
+      Foot
     },
     data () {
       return {
@@ -46,13 +49,13 @@
         this.$httpGet('home-page/banner', {
           type: 30
         }).then(({data}) => {
-          this.bannerImgs = data.values.length ? data.values : this.bannerImgs
+          this.bannerImgs = data.values.length ? data.values : this.bannerImgs;
         }).catch((error) => {
           console.log(error);
         })
       }
     },
-    mounted: function () {
+    mounted() {
       this.getBannerImg();
     }
   }

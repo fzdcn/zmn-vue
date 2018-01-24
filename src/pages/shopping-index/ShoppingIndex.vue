@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import Banner from '../../components/_Swiper'
+  import Banner from '../../components/Swiper'
 
   export default {
     name: 'shopping-home',

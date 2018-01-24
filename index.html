@@ -5,16 +5,23 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
   <title>蚕食智能生活服务</title>
   <script>
-    function getScreenWidth() {
-      return window.screen.width > window.innerWidth ? window.innerWidth : window.screen.width
-    }
-    function setFontSize() {
-      document.getElementsByTagName("html")[0].style.fontSize = ((getScreenWidth() / 10) < 67.5 ? (getScreenWidth() / 10) : 67.5) + 'px';
-    }
-    setFontSize();
-    window.onresize = function () {
-      setFontSize();
-    }
+    (function (doc, win) {
+      var docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          if (clientWidth >= 750) {
+            docEl.style.fontSize = '100px';
+          } else {
+            docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+          }
+        };
+
+      if (!doc.addEventListener) return;
+      win.addEventListener(resizeEvt, recalc, false);
+      doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
   </script>
   <link href="/static/css/loader.min.css" rel="stylesheet">
 </head>

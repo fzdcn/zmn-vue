@@ -10,19 +10,24 @@ const Home = () => import('../pages/app/Home');
 const Login = () => import('../pages/login/Login');
 const Register = () => import('../pages/login/Register');
 const ForgetPassword = () => import('../pages/login/ForgetPassword');
-const ShoppingHome = () => import( '../pages/shopping-mall/Shopping-Home');
+const ShoppingIndex = () => import( '../pages/shopping-index/ShoppingIndex');
 const City = () => import( '../pages/city/City');
 const Search = () => import( '../pages/search/Search');
+const StoresIndex = () => import( '../pages/stores-index/StoresIndex');
+const PersonalCenter = () => import( '../pages/personal-center/PersonalCenter');
+const OrderIndex = () => import( '../pages/order-index/OrderIndex');
 
 const routes = [
   {path: '/', redirect: {name: 'home'}},
   {path: '/login', name: 'login', component: Login, meta: {auth: false}},
-  {path: '/shopping-home', name: 'shopping-home', component: ShoppingHome, meta: {auth: false, keepAlive: true}},
+  {path: '/shopping-index', name: 'shopping-index', component: ShoppingIndex, meta: {auth: false, keepAlive: true}},
   {path: '/register', name: 'register', component: Register, meta: {auth: false}},
   {path: '/forget-password', name: 'forget-password', component: ForgetPassword, meta: {auth: false}},
   {path: '/home', name: 'home', component: Home, meta: {auth: false, keepAlive: true}},
   {path: '/city', name: 'city', component: City, meta: {auth: false}},
-  {path: '/search', name: 'search', component: Search, meta: {auth: false}}
+  {path: '/stores-index', name: 'stores-index', component: StoresIndex, meta: {auth: false}},
+  {path: '/personal-center', name: 'personal-center', component: PersonalCenter, meta: {auth: false}},
+  {path: '/order-index', name: 'order-index', component: OrderIndex, meta: {auth: false}}
 ];
 
 let router = new Router({
