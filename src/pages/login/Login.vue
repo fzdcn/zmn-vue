@@ -1,7 +1,7 @@
 <template>
-  <div class="login">
-    <div class="set">
-      <div class="set-on">登录</div>
+  <div class="login bg-fff">
+    <div class="set white bb-e6e6e6">
+      <div class="set-on fc-000 bg-fff">登录</div>
     </div>
     <div class="wx-login">
       <div class="top-logo">
@@ -10,24 +10,24 @@
       <div class="input-con">
         <div class="loing-tab">
           <ul>
-            <li v-for="item in tab" class="text-center">
+            <li v-for="item in tab" class="text-center fc-00a84c">
               {{ item }}
             </li>
           </ul>
         </div>
-        <div class="phone">
+        <div class="phone fc-e6e6e6 bb-e6e6e6">
           <input type="tel" placeholder="请输入手机号" class="input-style" v-model="form.phone">
         </div>
-        <div class="phone">
+        <div class="phone fc-e6e6e6 bb-e6e6e6">
           <input type="password" placeholder="请输入密码" class="input-style" v-model="form.password">
         </div>
         <div class="forget">
-          <router-link :to="{name:'forget-password'}"> 忘记密码？</router-link>
+          <router-link class="fc-00a84c" :to="{name:'forget-password'}"> 忘记密码？</router-link>
         </div>
       </div>
     </div>
-    <div class="but one" @click="submit">登录</div>
-    <div @click="$router.push({name:'register'})" class="but two">注册</div>
+    <div class="but one bg-00a84c fc-fff" @click="submit">登录</div>
+    <div @click="$router.push({name:'register'})" class="but two bd-00a84c fc-00a84c">注册</div>
   </div>
 </template>
 
@@ -96,7 +96,6 @@
 <style lang="stylus" scoped>
   @import "../../assets/common.styl"
   .login
-    background $white
     width 100%
     padding-bottom px2rem(250px)
     .set
@@ -105,9 +104,7 @@
       top: 0
       height px2rem(88px)
       line-height px2rem(88px)
-      background-color $white
       z-index 100
-      border-bottom: 1px solid $fc-e6e6e6;
       .set-on
         text-align center
         font-size $f36
@@ -139,63 +136,32 @@
               height px2rem(50px)
               line-height px2rem(50px)
               font-size $f32
-              color $fc-00a84c
               margin auto
               width 100%
         .phone
-          border-bottom 1px solid $fc-e6e6e6
+          border-bottom 1px solid
           margin: 0 px2rem(55px) px2rem(20px) px2rem(55px)
           .input-style
             line-height px2rem(60px)
             font-size $f28
             color #999
             width 100%
-          /* WebKit browsers */
-          &::-webkit-input-placeholder
-            color $fc-ccc
-          /* Mozilla Firefox 4 to 18 */
-          &:-moz-placeholder
-            color $fc-ccc
-
-          /* Mozilla Firefox 19+ */
-          &::-moz-placeholder
-            color $fc-ccc
-          /* Internet Explorer 10+ */
-          &:-ms-input-placeholder
-            color $fc-ccc
-        .number
-          border-bottom 1px solid $fc-e6e6e6
-          margin: 0 px2rem(55px) px2rem(20px) px2rem(55px)
-          .input-style
-            line-height px2rem(60px)
-            font-size $f28
-            color $fc-999
-            width 60%
-          /* WebKit browsers */
-          &::-webkit-input-placeholder
-            color $fc-ccc
-          /* Mozilla Firefox 4 to 18 */
-          &:-moz-placeholder
-            color $fc-ccc
-
-          /* Mozilla Firefox 19+ */
-          &::-moz-placeholder
-            color $fc-ccc
-          /* Internet Explorer 10+ */
-          &:-ms-input-placeholder
-            color $fc-ccc
-          .yan
-            float right
-            width px2rem(150px)
-            line-height px2rem(60px)
-            color $fc-00a84c
-            font-size $f28
-            text-align center
+            /* WebKit browsers */
+            &::-webkit-input-placeholder
+              color $fc-ccc
+            /* Mozilla Firefox 4 to 18 */
+            &:-moz-placeholder
+              color $fc-ccc
+            /* Mozilla Firefox 19+ */
+            &::-moz-placeholder
+              color $fc-ccc
+            /* Internet Explorer 10+ */
+            &:-ms-input-placeholder
+              color $fc-ccc
         .forget
           text-align right
           width 100%
           a
-            color $fc-00a84c
             font-size $f24
             display inline-block
             height px2rem(24px)
@@ -209,11 +175,8 @@
       line-height px2rem(88px)
       margin px2rem(95px) auto
     .one
-      background $fc-00a84c
-      color $white
       margin-bottom 0
     .two
-      border $fc-00a84c solid 1px
-      color $fc-00a84c
+      border 1px solid
       margin-top px2rem(50px)
 </style>

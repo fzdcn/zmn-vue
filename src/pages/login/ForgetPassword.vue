@@ -1,22 +1,22 @@
 <template>
   <div class="forget-password">
     <common-nav :navTitle="name"></common-nav>
-    <div class="info-form">
-      <div class="list-item">
+    <div class="info-form bt-e6e6e6 bg-fff">
+      <div class="list-item bb-e6e6e6">
         <span class="style-h font-3">手机号</span>
-        <input type="tel" placeholder="请输入手机号" v-model="phone" class="style-p font-3">
+        <input type="tel" placeholder="请输入手机号" v-model="phone" class="style-p fc-333">
       </div>
-      <div class="list-item">
+      <div class="list-item bb-e6e6e6">
         <span class="style-h font-3">验证码</span>
-        <input type="number" placeholder="请输入6位短信验证码" v-model="code" class="style-p font-3">
-        <div class="yan" @click="sendCode">{{ sendSmsTime > 0 ? sendSmsTime : '发送验证码' }}</div>
+        <input type="number" placeholder="请输入6位短信验证码" v-model="code" class="style-p fc-333">
+        <div class="yan fc-00a84c bd-00a84c" @click="sendCode">{{ sendSmsTime > 0 ? sendSmsTime : '发送验证码' }}</div>
       </div>
-      <div class="list-item">
+      <div class="list-item bb-e6e6e6">
         <span class="style-h font-3">新密码</span>
-        <input type="password" placeholder="请输入新密码" v-model="password" class="style-p font-3">
+        <input type="password" placeholder="请输入新密码" v-model="password" class="style-p fc-333">
       </div>
     </div>
-    <div class="sure" @click="submit">确定</div>
+    <div class="sure fc-fff bg-00a84c" @click="submit">确定</div>
   </div>
 </template>
 
@@ -101,11 +101,8 @@
 <style lang="stylus" scoped>
   @import "../../assets/common.styl";
   .info-form
-    border-top solid 1px $fc-e6e6e6
     margin-top px2rem(100px)
-    background-color $white
     .list-item
-      border-bottom solid 1px $fc-e6e6e6
       padding 0 px2rem(15px)
       height px2rem(88px)
       line-height px2rem(88px)
@@ -136,24 +133,13 @@
         max-width px2rem(340px)
         line-height px2rem(42px)
         font-size $f28
-        color $fc-333
         text-align left
-      .code
-        float right
-        width px2rem(180px)
-        height px2rem(88px)
-        line-height px2rem(88px)
-        color $fc-ccc
-        font-size $f24
-        text-align center
       .yan
         float right
         width px2rem(150px)
         line-height px2rem(50px)
-        color $fc-00a84c
         font-size $f24
         text-align center
-        border 1px solid $fc-00a84c
         margin px2rem(20px) px2rem(10px)
 
   .sure
@@ -163,6 +149,4 @@
     border-radius px2rem(55px)
     line-height px2rem(88px)
     margin px2rem(70px) auto
-    background $fc-00a84c
-    color $white
 </style>

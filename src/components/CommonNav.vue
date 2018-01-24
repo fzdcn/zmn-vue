@@ -1,5 +1,5 @@
 <template>
-  <div class="set">
+  <div class="set bg-fff bb-e6e6e6">
     <div class="set-on">{{ navTitle }}</div>
     <img @click="goBack" src="../../static/images/back.png" class="setback">
   </div>
@@ -35,9 +35,7 @@
     top: 0
     height px2rem(88px)
     line-height px2rem(88px)
-    background-color $white
     z-index 100
-    border-bottom: 1px solid $fc-e6e6e6;
     .set-on
       text-align center
       font-size px2rem(36px)

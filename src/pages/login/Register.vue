@@ -1,23 +1,23 @@
 <template>
   <div class="register">
     <common-nav :navTitle="name"></common-nav>
-    <div class="register-content">
-      <div class="telphone">
+    <div class="register-content bt-e6e6e6 bg-fff">
+      <div class="telphone bb-e6e6e6">
         <span>手机号码</span>
         <input v-model.trim="form.cellphone" id="tel-number" type="tel" placeholder="请输入手机号">
       </div>
-      <div class="message">
+      <div class="message bb-e6e6e6">
         <span>短信验证码</span>
         <input v-model.trim="form.verifyCode" id="message-number" type="text" placeholder="请输入验证码">
-        <div @click="sendSms" class="message-code fr">{{ sendSmsTime > 0 ? sendSmsTime : '发送验证码' }}</div>
+        <div @click="sendSms" class="message-code fc-00a84c bd-00a84c fr">{{ sendSmsTime > 0 ? sendSmsTime : '发送验证码' }}</div>
       </div>
-      <div class="password">
+      <div class="password bb-e6e6e6">
         <span>密码</span>
         <input v-model.trim="form.password" id="password-number" type="password" placeholder="请输入密码">
       </div>
     </div>
     <!--注册-->
-    <div @click="register" class="btn-submit">注册</div>
+    <div @click="register" class="btn-submit fc-fff bg-00a84c">注册</div>
   </div>
 </template>
 
@@ -120,11 +120,8 @@
 <style lang="stylus" scoped>
   @import "../../assets/common.styl";
   .register-content
-    border-top solid 1px $fc-e6e6e6
     margin-top px2rem(100px)
-    background-color $white
     > div
-      border-bottom solid 1px $fc-e6e6e6
       padding 0 px2rem(15px)
       height px2rem(88px)
       line-height px2rem(88px)
@@ -144,38 +141,20 @@
         font-size $f28
         color $fc-333
         text-align left
-      /* WebKit browsers */
-      ::input-placeholder
-        color $fc-ccc
-      /* Mozilla Firefox 4 to 18 */
-      :placeholder
-        color $fc-ccc
-        opacity 1
-      /* Mozilla Firefox 19+ */
-      ::placeholder
-        color $fc-ccc
-        opacity 1
-      /* Internet Explorer 10+ */
-      :input-placeholder
-        color $fc-ccc
-      .change-btn
-        width px2rem(150px)
-        height px2rem(50px)
-        border-radius px2rem(5px)
-        margin-top px2rem(19px)
-        color $fc-ee600c
-        line-height px2rem(50px)
-        text-align center
-
-      .verification-code
-        width px2rem(150px)
-        height px2rem(50px)
-        border-radius px2rem(5px)
-        margin-top px2rem(19px)
-        color $fc-ee600c
-        line-height px2rem(50px)
-        text-align center
-        margin-right: px2rem(5px)
+        /* WebKit browsers */
+        &::input-placeholder
+          color $fc-ccc
+        /* Mozilla Firefox 4 to 18 */
+        &:placeholder
+          color $fc-ccc
+          opacity 1
+        /* Mozilla Firefox 19+ */
+        &::placeholder
+          color $fc-ccc
+          opacity 1
+        /* Internet Explorer 10+ */
+        &:input-placeholder
+          color $fc-ccc
       .message-code
         height px2rem(50px)
         border-radius px2rem(5px)
@@ -184,17 +163,13 @@
         text-align center
         width px2rem(150px)
         font-size $f24
-        color $fc-00a84c
-        border 1px solid $fc-00a84c
 
   .btn-submit
     width px2rem(600px)
     height px2rem(90px)
     margin px2rem(75px)
     text-align center
-    color $white
     font-size $f36
-    background-color $fc-00a84c
     line-height px2rem(90px)
     border-radius px2rem(40px)
     -moz-border-radius px2rem(40px)

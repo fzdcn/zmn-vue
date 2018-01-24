@@ -42,7 +42,6 @@
     },
     methods: {},
     mounted() {
-      /*this.getBannerImg();*/
     }
   }
 </script>

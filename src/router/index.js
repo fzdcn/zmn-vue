@@ -11,14 +11,18 @@ const Login = () => import('../pages/login/Login');
 const Register = () => import('../pages/login/Register');
 const ForgetPassword = () => import('../pages/login/ForgetPassword');
 const ShoppingHome = () => import( '../pages/shopping-mall/Shopping-Home');
+const City = () => import( '../pages/city/City');
+const Search = () => import( '../pages/search/Search');
 
 const routes = [
   {path: '/', redirect: {name: 'home'}},
   {path: '/login', name: 'login', component: Login, meta: {auth: false}},
-  {path: '/shopping-home', name: 'shopping-home', component: ShoppingHome, meta: {auth:false, keepAlive: true}},
+  {path: '/shopping-home', name: 'shopping-home', component: ShoppingHome, meta: {auth: false, keepAlive: true}},
   {path: '/register', name: 'register', component: Register, meta: {auth: false}},
   {path: '/forget-password', name: 'forget-password', component: ForgetPassword, meta: {auth: false}},
-  {path: '/home', name: 'home', component: Home, meta: {auth: false, keepAlive: true}}
+  {path: '/home', name: 'home', component: Home, meta: {auth: false, keepAlive: true}},
+  {path: '/city', name: 'city', component: City, meta: {auth: false}},
+  {path: '/search', name: 'search', component: Search, meta: {auth: false}}
 ];
 
 let router = new Router({
