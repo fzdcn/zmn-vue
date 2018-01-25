@@ -21,7 +21,6 @@
     components: {},
     data(){
       return {
-        urlSelected: null,
         menus: [
           {
             link: {name: 'home'},
@@ -52,11 +51,7 @@
         ]
       }
     },
-    methods: {
-        urlJudge() {
-          window.location.href.toLowerCase().indexOf(item.link.name)
-        }
-    },
+    methods: {},
     mounted(){
     }
   }

@@ -31,7 +31,7 @@
   @import "../assets/common.styl"
   .set
     width 100%
-    position: fixed
+    position fixed
     top: 0
     height px2rem(88px)
     line-height px2rem(88px)

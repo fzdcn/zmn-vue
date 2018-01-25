@@ -1,37 +1,31 @@
 <template>
   <div class="index">
-    <!--header-->
-    <div class="header-top textaling bg-14A83B">
-      <div @click="$router.push({name:'city'})" class="city-position">
-        <dl>
-          <dt class="city-name fc-fff">苏州市</dt>
-          <dd class="inverted-triangle"><img src="../../../static/images/city-position.png" alt="back-img"></dd>
-        </dl>
-      </div>
-      <div class="project-title fc-fff">
-        <input @click="$router.push({name:'search'})" placeholder="请输入搜索内容" class="index-search fc-7f7f7f" type="text"
-               name="search">
-        <i class="search-img"></i>
-      </div>
-    </div>
-    <div class="swiper-banner">
+    <head-top></head-top>
+    <div id="mescroll" class="mescroll">
       <swiper :bannerImgs="bannerImgs"></swiper>
+      <benefit-life :benefitLife="benefitLife"></benefit-life>
     </div>
     <foot></foot>
   </div>
 </template>
 
 <script>
-  import Swiper from '../../components/Swiper'
-  import Foot from '../../components/Footer'
+  import HeadTop from './_Header';
+  import Swiper from '../../components/Swiper';
+  import Foot from '../../components/Footer';
+  import BenefitLife from './_BenefitLife';
+  import {pageScroll} from '../../config/functions';
   export default {
     name: 'Home',
     components: {
       Swiper,
-      Foot
+      Foot,
+      HeadTop,
+      BenefitLife
     },
     data () {
       return {
+        mescroll: null,
         bannerImgs: [
           {
             src: '../../static/images/commodity_shopping_loading@2x.png',
@@ -41,7 +35,8 @@
             src: '../../static/images/commodity_shopping_loading@2x.png',
             url: ''
           }
-        ]
+        ],
+        benefitLife: []
       }
     },
     methods: {
@@ -53,75 +48,52 @@
         }).catch((error) => {
           console.log(error);
         })
+      },
+      // 上拉加载的回调 page = {num:1, size:10}; num 当前页 从1开始, size 每页数据条数
+      upCallback(page) {
+        // 获取生活服务列表
+        this.$httpGet('today-recommend/list', {
+          per_page: page.size,
+          page: page.num
+        }).then(({data}) => {
+          // 联网成功的回调,隐藏下拉刷新和上拉加载的状态;
+          this.mescroll.endSuccess(data.items.length);// 传参:数据的总数; mescroll 会自动判断列表如果无任何数据,则提示空;列表无下一页数据,则提示无更多数据;
+          // 设置列表数据
+          this.setListData(data, page.num, true);
+        }).catch((error) => {
+          // 联网失败的回调,隐藏下拉刷新和上拉加载的状态;
+          this.mescroll.endErr();
+        })
+      },
+      // 设置列表数据
+      setListData(data, pageNum, isAppend) {
+        if (isAppend && pageNum == 1) {
+          this.benefitLife = data.items;
+        } else if (isAppend && pageNum > 1) {
+          this.benefitLife = this.benefitLife.concat(data.items);
+        }
+      },
+      meScroll(_this, empty) {
+        _this = this;
+        empty = {
+          warpId: "mescroll",
+          icon: '../../../static/images/blank_no_service@2x.png',
+          tip: "",
+          btntext: ""
+        };
+        pageScroll(_this, 5, false, false, false, empty);
       }
     },
     mounted() {
       this.getBannerImg();
+      this.meScroll();
     }
   }
 </script>
 
 <style scoped lang="stylus">
   @import "../../assets/common.styl"
-  .index
-    .swiper-banner
-      margin-top px2rem(89px)
-    .header-top
-      position fixed
-      top px2rem(0px)
-      height px2rem(89px)
-      width 100%
-      line-height px2rem(89px)
-      padding 0 px2rem(15px)
-      z-index 100
-      .project-title
-        position absolute
-        font-size $f28
-        width px2rem(350px)
-        text-align center
-        top px2rem(0px)
-        height px2rem(89px)
-        left 50%
-        margin-left px2rem(-175px)
-        .index-search
-          width px2rem(350px)
-          height px2rem(54px)
-          border-radius: px2rem(50px)
-          font-size $f24
-          text-align left
-          line-height px2rem(54px)
-          padding-left px2rem(100px)
-
-        .search-img
-          display inline-block
-          position absolute
-          width px2rem(32px)
-          height px2rem(32px)
-          background url("../../../static/images/home_search@2x.png") no-repeat
-          background-size px2rem(32px) px2rem(32px)
-          top px2rem(32px)
-          left px2rem(50px)
-      .city-position
-        width px2rem(160px)
-        height px2rem(89px)
-        .city-name
-          position absolute
-          text-align center
-          width px2rem(130px)
-          line-height px2rem(89px)
-          height px2rem(89px)
-          font-size $f28
-          display -webkit-box
-          -webkit-line-clamp 1
-          overflow hidden
-          -webkit-box-orient vertical
-          word-break break-all
-
-        .inverted-triangle
-          margin-left px2rem(130px)
-          width px2rem(30px)
-          img
-            width px2rem(30px)
-            height px2rem(16px)
-
+  .mescroll
+    position fixed
+    top px2rem(89px)
 </style>

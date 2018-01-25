@@ -16,7 +16,7 @@
   import Banner from '../../components/Swiper';
   import Foot from '../../components/Footer';
   export default {
-    name: 'shopping-home',
+    name: 'ShoppingHome',
     components: {
       Banner,
       Foot
@@ -42,9 +42,7 @@
 </script>
 
 <style scoped lang="stylus">
-  px2rem($px)
-    $rem = 75px
-    $px/$rem rem
+  @import "../../assets/common.styl"
 
   .shop-head
     height: px2rem(89px)

@@ -7,7 +7,7 @@
 <script>
   import Foot from '../../components/Footer';
   export default {
-    name: '',
+    name: 'PersonalCenter',
     components: {Foot},
     data(){
       return {}
