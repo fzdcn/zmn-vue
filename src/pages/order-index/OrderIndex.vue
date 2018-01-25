@@ -1,11 +1,14 @@
 <template>
-  <div>new</div>
+  <div class="order-index">
+    <foot></foot>
+  </div>
 </template>
 
 <script>
+  import Foot from '../../components/Footer';
   export default {
     name: '',
-    components: {},
+    components: {Foot},
     data(){
       return {}
     },

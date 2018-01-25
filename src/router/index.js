@@ -26,8 +26,8 @@ const routes = [
   {path: '/home', name: 'home', component: Home, meta: {auth: false, keepAlive: true}},
   {path: '/city', name: 'city', component: City, meta: {auth: false}},
   {path: '/stores-index', name: 'stores-index', component: StoresIndex, meta: {auth: false}},
-  {path: '/personal-center', name: 'personal-center', component: PersonalCenter, meta: {auth: false}},
-  {path: '/order-index', name: 'order-index', component: OrderIndex, meta: {auth: false}}
+  {path: '/personal-center', name: 'personal-center', component: PersonalCenter, meta: {auth: true, keepAlive: true}},
+  {path: '/order-index', name: 'order-index', component: OrderIndex, meta: {auth: true, keepAlive: true}}
 ];
 
 let router = new Router({

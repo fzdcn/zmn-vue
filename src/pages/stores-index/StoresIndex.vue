@@ -1,18 +1,21 @@
 <template>
-    <div>new</div>
+  <div class="stores-index">
+    <foot></foot>
+  </div>
 </template>
 
 <script>
-    export default {
-        name: '',
-        components: {},
-        data(){
-            return {}
-        },
-        methods: {},
-        mounted(){
-        }
+  import Foot from '../../components/Footer';
+  export default {
+    name: '',
+    components: {Foot},
+    data(){
+      return {}
+    },
+    methods: {},
+    mounted(){
     }
+  }
 </script>
 
 <style lang="stylus" scoped>

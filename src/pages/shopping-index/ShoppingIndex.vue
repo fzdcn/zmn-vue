@@ -8,16 +8,18 @@
     <div class="ban">
       <banner :bannerImg="bannerImage"></banner>
     </div>
+    <foot></foot>
   </div>
 </template>
 
 <script>
-  import Banner from '../../components/Swiper'
-
+  import Banner from '../../components/Swiper';
+  import Foot from '../../components/Footer';
   export default {
     name: 'shopping-home',
     components: {
-      Banner
+      Banner,
+      Foot
     },
     data() {
       return {
@@ -43,6 +45,7 @@
   px2rem($px)
     $rem = 75px
     $px/$rem rem
+
   .shop-head
     height: px2rem(89px)
     background: #00a84c
@@ -87,6 +90,7 @@
     /* Internet Explorer 10+ */
     :-ms-input-placeholder
       color: #00a84c
+
   .ban
     margin-top: px2rem(89px)
 </style>
