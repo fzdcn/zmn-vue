@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="company-slogan bg-e8e8e8 text-center">
-      <img src="../../../static/images/home_word@2x.png" alt="公司口号">
+      <img src="static/images/home_word@2x.png" alt="公司口号">
     </div>
   </div>
 </template>
