@@ -1,19 +1,24 @@
 <template>
   <!--惠生活-->
-  <div v-if="benefitLife.length > 0" class="recommend bg-fff">
-    <div class="recommend-top bg-fff">
-      <dl>
-        <dt class="fc-4c4c4c">惠生活<span class="fc-00a84c">HUISHENGHUO</span></dt>
-      </dl>
-    </div>
-    <div class="recommend-list">
-      <div class="recommend-list-img">
-        <ul>
-          <li @click="jumpBenefitLifeDetail(item)" v-for="item in benefitLife">
-            <img v-lazy="item.cover" src="" alt=""></li>
-        </ul>
-        <div class="clear"></div>
+  <div>
+    <div v-if="benefitLife.length > 0" class="recommend bg-fff">
+      <div class="recommend-top bg-fff">
+        <dl>
+          <dt class="fc-4c4c4c">惠生活<span class="fc-00a84c">HUISHENGHUO</span></dt>
+        </dl>
       </div>
+      <div class="recommend-list">
+        <div class="recommend-list-img">
+          <ul>
+            <li @click="jumpBenefitLifeDetail(item)" v-for="item in benefitLife">
+              <img v-lazy="item.cover" src="" alt=""></li>
+          </ul>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+    <div class="company-slogan bg-e8e8e8 text-center">
+      <img src="../../../static/images/home_word@2x.png" alt="公司口号">
     </div>
   </div>
 </template>
@@ -73,4 +78,12 @@
             margin-bottom px2rem(20px)
             img
               width px2rem(750px)
+
+  .company-slogan
+    height px2rem(128px)
+    line-height px2rem(128px)
+    margin-top px2rem(20px)
+    img
+      width: px2rem(490px)
+      height: px2rem(29px)
 </style>

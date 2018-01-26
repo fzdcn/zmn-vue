@@ -171,3 +171,20 @@ export function pageScroll(_this, pageSize, htmlContent, upAuto, emptyIcon, empt
     }
   });
 }
+
+export const SERVICE_NAME = {
+  1005: '保洁',
+  1006: '钟点工',
+  1003: '保姆',
+  1004: '护工',
+  1002: '育婴师',
+  1001: '月嫂'
+}
+export const SERVICE_CODE = {
+  '保洁': 1005,
+  '钟点工': 1006,
+  '保姆': 1003,
+  '护工': 1004,
+  '育婴师': 1002,
+  '月嫂': 1001
+}

@@ -2,7 +2,8 @@
   <div class="index">
     <head-top></head-top>
     <div id="mescroll" class="mescroll">
-      <swiper :bannerImgs="bannerImgs"></swiper>
+      <swiper :bannerImg="bannerImg"></swiper>
+      <domestic-service></domestic-service>
       <benefit-life :benefitLife="benefitLife"></benefit-life>
     </div>
     <foot></foot>
@@ -14,6 +15,7 @@
   import Swiper from '../../components/Swiper';
   import Foot from '../../components/Footer';
   import BenefitLife from './_BenefitLife';
+  import DomesticService from './_DomesticService';
   import {pageScroll} from '../../config/functions';
   export default {
     name: 'Home',
@@ -21,12 +23,13 @@
       Swiper,
       Foot,
       HeadTop,
-      BenefitLife
+      BenefitLife,
+      DomesticService
     },
     data () {
       return {
         mescroll: null,
-        bannerImgs: [
+        bannerImg: [
           {
             src: '../../static/images/commodity_shopping_loading@2x.png',
             url: ''
@@ -44,7 +47,7 @@
         this.$httpGet('home-page/banner', {
           type: 30
         }).then(({data}) => {
-          this.bannerImgs = data.values.length ? data.values : this.bannerImgs;
+          this.bannerImg = data.values.length ? data.values : this.bannerImg;
         }).catch((error) => {
           console.log(error);
         })
@@ -57,7 +60,7 @@
           page: page.num
         }).then(({data}) => {
           // 联网成功的回调,隐藏下拉刷新和上拉加载的状态;
-          this.mescroll.endSuccess(data.items.length);// 传参:数据的总数; mescroll 会自动判断列表如果无任何数据,则提示空;列表无下一页数据,则提示无更多数据;
+          this.mescroll.endByPage(data.items.length, data.pagination.pageCount);// 传参:数据的总数; mescroll 会自动判断列表如果无任何数据,则提示空;列表无下一页数据,则提示无更多数据;
           // 设置列表数据
           this.setListData(data, page.num, true);
         }).catch((error) => {
@@ -68,6 +71,7 @@
       // 设置列表数据
       setListData(data, pageNum, isAppend) {
         if (isAppend && pageNum == 1) {
+          this.getBannerImg();
           this.benefitLife = data.items;
         } else if (isAppend && pageNum > 1) {
           this.benefitLife = this.benefitLife.concat(data.items);
@@ -85,7 +89,6 @@
       }
     },
     mounted() {
-      this.getBannerImg();
       this.meScroll();
     }
   }
@@ -96,4 +99,9 @@
   .mescroll
     position fixed
     top px2rem(89px)
+</style>
+<style lang="stylus">
+  @import "../../assets/common.styl"
+  .mescroll-upwarp
+    margin-bottom px2rem(170px)
 </style>

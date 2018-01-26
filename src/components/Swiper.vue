@@ -1,7 +1,7 @@
 <template>
   <keep-alive include="Swiper">
     <swiper :options="swiperOption">
-      <swiper-slide class="text-center" v-for="(item,index) in bannerImgs" :key="index">
+      <swiper-slide class="text-center" v-for="(item,index) in bannerImg" :key="index">
         <img :src="item.src">
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -19,8 +19,9 @@
       swiperSlide
     },
     props: {
-      bannerImgs: {
+      bannerImg: {
         type: Array,
+        required: true
       }
     },
     data() {
