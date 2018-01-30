@@ -1,7 +1,7 @@
 <template>
-  <div class="set bg-fff bb-e6e6e6">
+  <div class="set bg-white">
     <div class="set-on">{{ navTitle }}</div>
-    <img @click="goBack" src="../../static/images/back.png" class="setback">
+    <img @click="goBack" src="/static/images/back.png" class="setback">
   </div>
 </template>
 
@@ -28,7 +28,7 @@
 </script>
 
 <style lang="stylus" scoped>
-  @import "../assets/common.styl"
+  @import "../assets/variable.styl"
   .set
     width 100%
     position fixed
@@ -36,6 +36,7 @@
     height px2rem(88px)
     line-height px2rem(88px)
     z-index 100
+    border-bottom 1px solid #e6e6e6
     .set-on
       text-align center
       font-size px2rem(36px)

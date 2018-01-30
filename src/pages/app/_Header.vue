@@ -1,12 +1,12 @@
 <template>
-  <div class="header-top textaling bg-14A83B">
+  <div class="header-top textaling bg-dark-green">
     <div @click="$router.push({name:'city'})" class="city-position">
       <dl>
-        <dt class="city-name fc-fff">苏州市</dt>
-        <dd class="inverted-triangle"><img src="../../../static/images/city-position.png" alt="back-img"></dd>
+        <dt class="city-name white">苏州市</dt>
+        <dd class="inverted-triangle"><img src="/static/images/city-position.png" alt="back-img"></dd>
       </dl>
     </div>
-    <div class="project-title fc-fff">
+    <div class="project-title white">
       <input @click="$router.push({name:'search'})" placeholder="请输入搜索内容" class="index-search fc-7f7f7f" type="text"
              name="search">
       <i class="search-img"></i>
@@ -28,7 +28,7 @@
 </script>
 
 <style lang="stylus" scoped>
-  @import "../../assets/common.styl"
+  @import "../../assets/variable.styl"
   .header-top
     position fixed
     top px2rem(0px)
@@ -60,7 +60,7 @@
         position absolute
         width px2rem(32px)
         height px2rem(32px)
-        background url("../../../static/images/home_search@2x.png") no-repeat
+        background url("/static/images/home_search@2x.png") no-repeat
         background-size px2rem(32px) px2rem(32px)
         top px2rem(32px)
         left px2rem(50px)

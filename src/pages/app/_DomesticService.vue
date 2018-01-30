@@ -1,28 +1,28 @@
 <template>
-  <div class="service-list bg-fff">
+  <div class="service-list bg-white">
     <div class="service-detail">
       <ul>
         <a v-for="(index,item) in serviceOptions">
           <li class="fl text-center">
-            <img v-if="index == 1005" src="../../../static/images/baojie-wx.png" alt="item">
-            <img v-if="index == 1006" src="../../../static/images/zhongdiangong.png" alt="item">
-            <img v-if="index == 1003" src="../../../static/images/baomu.png" alt="item">
-            <img v-if="index == 1004" src="../../../static/images/hugong.png" alt="item">
-            <img v-if="index == 1002" src="../../../static/images/yuyingshi.png" alt="item">
-            <img v-if="index == 1001" src="../../../static/images/yuesao.png" alt="item">
-            <p class="text-center fc-545454">{{ item }}</p>
+            <img v-if="index == 1005" src="/static/images/baojie-wx.png" :alt="item">
+            <img v-if="index == 1006" src="/static/images/zhongdiangong.png" :alt="item">
+            <img v-if="index == 1003" src="/static/images/baomu.png" :alt="item">
+            <img v-if="index == 1004" src="/static/images/hugong.png" :alt="item">
+            <img v-if="index == 1002" src="/static/images/yuyingshi.png" :alt="item">
+            <img v-if="index == 1001" src="/static/images/yuesao.png" :alt="item">
+            <p class="text-center black">{{ item }}</p>
           </li>
         </a>
         <a href="javascript:void(0);">
           <li class="fl text-center" @click="">
-            <img src="../../../static/images/yiyuanhuli.png" alt="医院护理">
-            <p class="textaling fc-545454">医院护理</p>
+            <img src="/static/images/yiyuanhuli.png" alt="医院护理">
+            <p class="textaling black">医院护理</p>
           </li>
         </a>
         <a href="javascript:void(0);">
           <li class="fl text-center" @click="">
-            <img src="../../../static/images/private_order@2x.png" alt="私人订制">
-            <p class="text-center fc-545454">私人订制</p>
+            <img src="/static/images/private_order@2x.png" alt="私人订制">
+            <p class="text-center black">私人订制</p>
           </li>
         </a>
       </ul>
@@ -48,7 +48,7 @@
 </script>
 
 <style lang="stylus" scoped>
-  @import "../../assets/common.styl"
+  @import "../../assets/variable.styl"
   .service-list
     width 100%
     height auto

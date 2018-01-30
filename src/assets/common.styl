@@ -2,121 +2,112 @@
 
 body
   font-family -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif
-  background-color $fc-f5f5f5
+  background-color #f5f5f5
   line-height 1.4
   font-size $fontSizeMedium
   margin 0
 
+.empty-btn
+  color $darkGreen
+
 a
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
 
+/*字体颜色*/
 .green
   color $green
 
-.bg-green
-  background-color $green
-  color $white
+.dark-green
+  color $darkGreen
 
 .blue
   color $blue
 
-.bg-blue
-  background-color $blue
-  color $white
+.light-blue
+  color $lightBlue
 
 .yellow
   color $yellow
 
-.bg-yellow
-  background-color $yellow
-  color $white
+.light-yellow
+  color $lightYellow
+
+.orange-yellow
+  color $orangeYellow
 
 .red
   color $red
+
+.dark-red
+  color $darkRed
+
+.light-red
+  color $lightRed
+
+.grey
+  color $grey
+
+.light-grey
+  color $lightGrey
+
+.light-grey-1
+  color $lightGrey1
+
+.black-grey
+  color $blackGrey
+
+.dark-grey
+  color $darkGrey
+
+.white
+  color $white
+
+.black
+  color $black
+
+/*背景颜色*/
+.bg-blue
+  background-color $blue
+  color $white
+
+.bg-light-blue
+  background-color $lightBlue
+  color $white
+
+.bg-light-yellow
+  background-color $lightYellow
+  color $white
 
 .bg-red
   background-color $red
   color $white
 
-.grey
-  color $darkGrey
+.bg-dark-red
+  background-color $darkRed
+  color $white
 
 .bg-grey
   background-color $grey
 
-.white
-  color $white
+.bg-dark-grey
+  background-color $darkGrey
+
+.bg-light-grey
+  background-color $lightGrey
+
+.bg-light-grey-1
+  background-color $lightGrey1
 
 .bg-white
   background-color $white
 
-/*字体颜色*/
-.fc-000
-  color $fc-000
+.bg-dark-green
+  background-color $darkGreen
+  color $white
 
-.fc-fff
-  color $fc-fff
-
-.fc-4c4c4c
-  color $fc-4c4c4c
-
-.fc-e6e6e6
-  color $fc-e6e6e6
-
-.fc-666
-  color $fc-666
-
-.fc-00a84c
-  color $fc-00a84c
-
-.fc-999
-  color $fc-999
-
-.fc-545454
-  color $fc-545454
-
-.fc-ccc
-  color $fc-ccc
-
-.fc-333
-  color $fc-333
-
-.fc-ee600c
-  color $fc-ee600c
-
-.fc-f5f5f5
-  color $fc-f5f5f5
-
-.fc-7f7f7f
-  color $fc-7f7f7f
-
-/*背景颜色*/
-.bg-fff
-  background-color $bg-fff
-
-.bg-14A83B
-  background-color $bg-14A83B
-
-.bg-00a84c
-  background-color $bg-00a84c
-
-.bg-e8e8e8
-  background-color $bg-e8e8e8
-
-/*四边边框颜色*/
-.bd-e6e6e6
-  border 1px solid $bd-e6e6e6
-
-.bd-00a84c
-  border 1px solid $bd-00a84c
-
-/*顶部边框颜色*/
-.bt-e6e6e6
-  border-top solid 1px $bt-e6e6e6
-
-/*底边边框颜色*/
-.bb-e6e6e6
-  border-bottom 1px solid #e6e6e6
+.bg-green
+  background-color $green
+  color $white
 
 .btn
   padding px2rem(11px) px2rem(32px)
@@ -139,11 +130,11 @@ a
     display block
     width: 100%
   &.btn-red
-    background-color $red
+    background-color $darkRed
   &.btn-green
-    background-color $green
+    background-color $darkGreen
   &.btn-blue
-    background-color $blue
+    background-color $lightBlue
   &.btn-grey
     background-color $white
     border 1px solid $darkGrey

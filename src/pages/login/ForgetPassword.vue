@@ -1,22 +1,22 @@
 <template>
   <div class="forget-password">
     <common-nav :navTitle="name"></common-nav>
-    <div class="info-form bt-e6e6e6 bg-fff">
-      <div class="list-item bb-e6e6e6">
-        <span class="style-h font-3">手机号</span>
-        <input type="tel" placeholder="请输入手机号" v-model="phone" class="style-p fc-333">
+    <div class="info-form bg-white">
+      <div class="list-item">
+        <span class="style-h black-grey">手机号</span>
+        <input type="tel" placeholder="请输入手机号" v-model="phone" class="style-p black-grey">
       </div>
-      <div class="list-item bb-e6e6e6">
-        <span class="style-h font-3">验证码</span>
-        <input type="number" placeholder="请输入6位短信验证码" v-model="code" class="style-p fc-333">
-        <div class="yan fc-00a84c bd-00a84c" @click="sendCode">{{ sendSmsTime > 0 ? sendSmsTime : '发送验证码' }}</div>
+      <div class="list-item">
+        <span class="style-h black-grey">验证码</span>
+        <input type="number" placeholder="请输入6位短信验证码" v-model="code" class="style-p black-grey">
+        <div class="yan dark-green" @click="sendCode">{{ sendSmsTime > 0 ? sendSmsTime : '发送验证码' }}</div>
       </div>
-      <div class="list-item bb-e6e6e6">
-        <span class="style-h font-3">新密码</span>
-        <input type="password" placeholder="请输入新密码" v-model="password" class="style-p fc-333">
+      <div class="list-item">
+        <span class="style-h black-grey">新密码</span>
+        <input type="password" placeholder="请输入新密码" v-model="password" class="style-p black-grey">
       </div>
     </div>
-    <div class="sure fc-fff bg-00a84c" @click="submit">确定</div>
+    <div class="sure white bg-dark-green" @click="submit">确定</div>
   </div>
 </template>
 
@@ -99,32 +99,33 @@
 </script>
 
 <style lang="stylus" scoped>
-  @import "../../assets/common.styl";
+  @import "../../assets/variable.styl";
   .info-form
+    border-top 1px solid #e6e6e6
     margin-top px2rem(100px)
     .list-item
       padding 0 px2rem(15px)
       height px2rem(88px)
       line-height px2rem(88px)
+      border-bottom 1px solid #e6e6e6
       /* WebKit browsers */
       ::-webkit-input-placeholder
-        color $fc-ccc
+        color #ccc
       /* Mozilla Firefox 4 to 18 */
       :-moz-placeholder
-        color $fc-ccc
+        color #ccc
         opacity 1
       /* Mozilla Firefox 19+ */
       ::-moz-placeholder
-        color $fc-ccc
+        color #ccc
         opacity 1
       /* Internet Explorer 10+ */
       :-ms-input-placeholder
-        color $fc-ccc
+        color #ccc
       .style-h
         height px2rem(42px)
         line-height px2rem(42px)
         font-size $f28
-        color $fc-333
         display inline-block
         width px2rem(150px)
         text-align left
@@ -141,6 +142,7 @@
         font-size $f24
         text-align center
         margin px2rem(20px) px2rem(10px)
+        border 1px solid #00a84c
 
   .sure
     width px2rem(600px)

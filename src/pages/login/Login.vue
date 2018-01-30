@@ -1,33 +1,33 @@
 <template>
-  <div class="login bg-fff">
-    <div class="set white bb-e6e6e6">
-      <div class="set-on fc-000 bg-fff">登录</div>
+  <div class="login bg-white">
+    <div class="set white">
+      <div class="set-on black bg-white">登录</div>
     </div>
     <div class="wx-login">
       <div class="top-logo">
-        <img src="../../../static/images/wx-logo.png">
+        <img src="/static/images/wx-logo.png">
       </div>
       <div class="input-con">
         <div class="loing-tab">
           <ul>
-            <li v-for="item in tab" class="text-center fc-00a84c">
+            <li v-for="item in tab" class="text-center dark-green">
               {{ item }}
             </li>
           </ul>
         </div>
-        <div class="phone fc-e6e6e6 bb-e6e6e6">
+        <div class="phone grey">
           <input type="tel" placeholder="请输入手机号" class="input-style" v-model="form.phone">
         </div>
-        <div class="phone fc-e6e6e6 bb-e6e6e6">
+        <div class="phone grey">
           <input type="password" placeholder="请输入密码" class="input-style" v-model="form.password">
         </div>
         <div class="forget">
-          <router-link class="fc-00a84c" :to="{name:'forget-password'}"> 忘记密码？</router-link>
+          <router-link class="dark-green" :to="{name:'forget-password'}"> 忘记密码？</router-link>
         </div>
       </div>
     </div>
-    <div class="but one bg-00a84c fc-fff" @click="submit">登录</div>
-    <div @click="$router.push({name:'register'})" class="but two bd-00a84c fc-00a84c">注册</div>
+    <div class="but one bg-dark-green white" @click="submit">登录</div>
+    <div @click="$router.push({name:'register'})" class="but two dark-green">注册</div>
   </div>
 </template>
 
@@ -94,7 +94,7 @@
 </script>
 
 <style lang="stylus" scoped>
-  @import "../../assets/common.styl"
+  @import "../../assets/variable.styl"
   .login
     width 100%
     padding-bottom px2rem(250px)
@@ -105,6 +105,7 @@
       height px2rem(88px)
       line-height px2rem(88px)
       z-index 100
+      border-bottom 1px solid #e6e6e6
       .set-on
         text-align center
         font-size $f36
@@ -139,7 +140,7 @@
               margin auto
               width 100%
         .phone
-          border-bottom 1px solid
+          border-bottom 1px solid #e6e6e6
           margin: 0 px2rem(55px) px2rem(20px) px2rem(55px)
           .input-style
             line-height px2rem(60px)
@@ -148,16 +149,16 @@
             width 100%
             /* WebKit browsers */
             &::-webkit-input-placeholder
-              color $fc-ccc
+              color #ccc
             /* Mozilla Firefox 4 to 18 */
             &:-moz-placeholder
-              color $fc-ccc
+              color #ccc
             /* Mozilla Firefox 19+ */
             &::-moz-placeholder
-              color $fc-ccc
+              color #ccc
             /* Internet Explorer 10+ */
             &:-ms-input-placeholder
-              color $fc-ccc
+              color #ccc
         .forget
           text-align right
           width 100%
@@ -177,6 +178,6 @@
     .one
       margin-bottom 0
     .two
-      border 1px solid
+      border 1px solid #00a84c
       margin-top px2rem(50px)
 </style>

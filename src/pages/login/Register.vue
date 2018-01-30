@@ -1,23 +1,23 @@
 <template>
   <div class="register">
     <common-nav :navTitle="name"></common-nav>
-    <div class="register-content bt-e6e6e6 bg-fff">
-      <div class="telphone bb-e6e6e6">
-        <span>手机号码</span>
-        <input v-model.trim="form.cellphone" id="tel-number" type="tel" placeholder="请输入手机号">
+    <div class="register-content bg-white">
+      <div class="telphone">
+        <span class="black-grey">手机号码</span>
+        <input v-model.trim="form.cellphone" id="tel-number" class="black-grey" type="tel" placeholder="请输入手机号">
       </div>
-      <div class="message bb-e6e6e6">
-        <span>短信验证码</span>
-        <input v-model.trim="form.verifyCode" id="message-number" type="text" placeholder="请输入验证码">
-        <div @click="sendSms" class="message-code fc-00a84c bd-00a84c fr">{{ sendSmsTime > 0 ? sendSmsTime : '发送验证码' }}</div>
+      <div class="message">
+        <span class="black-grey">短信验证码</span>
+        <input v-model.trim="form.verifyCode" id="message-number" class="black-grey" type="text" placeholder="请输入验证码">
+        <div @click="sendSms" class="message-code dark-green fr">{{ sendSmsTime > 0 ? sendSmsTime : '发送验证码' }}</div>
       </div>
-      <div class="password bb-e6e6e6">
-        <span>密码</span>
-        <input v-model.trim="form.password" id="password-number" type="password" placeholder="请输入密码">
+      <div class="password">
+        <span class="black-grey">密码</span>
+        <input v-model.trim="form.password" id="password-number" class="black-grey" type="password" placeholder="请输入密码">
       </div>
     </div>
     <!--注册-->
-    <div @click="register" class="btn-submit fc-fff bg-00a84c">注册</div>
+    <div @click="register" class="btn-submit white bg-dark-green">注册</div>
   </div>
 </template>
 
@@ -118,18 +118,19 @@
 </script>
 
 <style lang="stylus" scoped>
-  @import "../../assets/common.styl";
+  @import "../../assets/variable.styl";
   .register-content
     margin-top px2rem(100px)
+    border-top 1px solid #e6e6e6
     > div
       padding 0 px2rem(15px)
       height px2rem(88px)
       line-height px2rem(88px)
+      border-bottom 1px solid #e6e6e6
       span
         height px2rem(42px)
         line-height px2rem(42px)
         font-size $f28
-        color $fc-333
         display inline-block
         width px2rem(150px)
         text-align left
@@ -139,22 +140,21 @@
         max-width px2rem(340px)
         line-height px2rem(42px)
         font-size $f28
-        color $fc-333
         text-align left
         /* WebKit browsers */
         &::input-placeholder
-          color $fc-ccc
+          color #ccc
         /* Mozilla Firefox 4 to 18 */
         &:placeholder
-          color $fc-ccc
+          color #ccc
           opacity 1
         /* Mozilla Firefox 19+ */
         &::placeholder
-          color $fc-ccc
+          color #ccc
           opacity 1
         /* Internet Explorer 10+ */
         &:input-placeholder
-          color $fc-ccc
+          color #ccc
       .message-code
         height px2rem(50px)
         border-radius px2rem(5px)
@@ -163,6 +163,7 @@
         text-align center
         width px2rem(150px)
         font-size $f24
+        border 1px solid #00a84c
 
   .btn-submit
     width px2rem(600px)

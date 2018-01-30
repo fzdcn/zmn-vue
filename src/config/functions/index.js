@@ -126,8 +126,8 @@ export function requestGet(name) {
  * */
 export function pageScroll(_this, pageSize, htmlContent, upAuto, emptyIcon, empty, htmlNoData) {
   pageSize = pageSize ? pageSize : 10;
-  htmlContent = htmlContent ? htmlContent : '<p class="downwarp-tip" style="color: #00a84c;">下拉刷新</p><span style="text-align: center;width: auto"><img style="height: 1rem;" src="../../../static/images/loading.gif" alt="加载中..."</span>';
-  emptyIcon = emptyIcon ? emptyIcon : '../../../static/images/blank_no_service@2x.png';
+  htmlContent = htmlContent ? htmlContent : '<p class="downwarp-tip" style="color: #00a84c;">下拉刷新</p><span style="text-align: center;width: auto"><img style="height: 1rem;" src="/static/images/loading.gif" alt="加载中..."</span>';
+  emptyIcon = emptyIcon ? emptyIcon : '/static/images/blank_no_service@2x.png';
   empty = empty ? empty : {
     warpId: "mescroll",
     icon: emptyIcon,
@@ -159,13 +159,13 @@ export function pageScroll(_this, pageSize, htmlContent, upAuto, emptyIcon, empt
         delay: 500 // 延时执行的毫秒数; 延时是为了保证列表数据或占位的图片都已初始化完成,且下拉刷新上拉加载中区域动画已执行完毕;
       },
       toTop: { // 配置回到顶部按钮
-        src: "../../../static/images/mescroll-totop.png", // 默认滚动到1000px显示,可配置 offset 修改
+        src: "/static/images/mescroll-totop.png", // 默认滚动到1000px显示,可配置 offset 修改
         offset: 250
       },
       empty: empty, //配置列表无任何数据的提示,
       htmlNodata: htmlNoData,// 无数据的布局
       hardwareClass: "mescroll-hardware",
-      htmlLoading: '<p style="width: 1rem;height: 1rem; text-align: center; " class="upwarp-tip"><img src="../../../static/images/loading.gif" alt="加载中..."></p>',// 上拉加载中的布局
+      htmlLoading: '<p style="width: 1rem;height: 1rem; text-align: center; " class="upwarp-tip"><img src="/static/images/loading.gif" alt="加载中..."></p>',// 上拉加载中的布局
       resetClass: "mescroll-downwarp-reset",// 下拉刷新高度重置的动画
       callback: _this.upCallback // 上拉回调,此处可简写; 相当于 callback: function (page) { upCallback(page); }
     }

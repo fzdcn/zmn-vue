@@ -2,8 +2,8 @@
   <div>
     <div class="shop-head">
       <input placeholder="请输入搜索内容" class="sou" type="text" name="search">
-      <img src="../../../static/images/home_search@2x.png" class="search-image">
-      <a><img src="../../../static/images/shop_shopping@2x.png" class="shop-image"></a>
+      <img src="/static/images/home_search@2x.png" class="search-image">
+      <a><img src="/static/images/shop_shopping@2x.png" class="shop-image"></a>
     </div>
     <div class="ban">
       <banner :bannerImg="bannerImage"></banner>

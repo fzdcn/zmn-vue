@@ -1,13 +1,16 @@
 <template>
-  <div class="foot bt-e6e6e6 bg-fff">
+  <div class="foot bt-e6e6e6 bg-white">
     <div class="foot-list">
       <ul>
         <li v-for="(item,index) in menus" class="fl text-center">
           <router-link :to="item.link">
-            <i v-if="$route.name == item.link.name" :class="item.iconSelected"></i>
-            <i v-else :class="item.icon"></i>
-            <p v-if="$route.name == item.link.name" class="$f20 fc-00a84c ">{{ item.text }}</p>
-            <p v-else class="$f20 fc-666">{{ item.text }}</p>
+            <i v-if="$route.name == item.link.name" :class="item.iconSelected"
+               :style="{backgroundImage:'url('+item.iconSelected+')'}"
+               style="background-size:0.48rem 0.48rem;background-repeat:no-repeat;background-position:center;"></i>
+            <i v-else :style="{backgroundImage:'url('+item.icon+')'}"
+               style="background-size:0.48rem 0.48rem;background-repeat:no-repeat;background-position:center;"></i>
+            <p v-if="$route.name == item.link.name" class="$f20 dark-green ">{{ item.text }}</p>
+            <p v-else class="$f20 dark-grey">{{ item.text }}</p>
           </router-link>
         </li>
       </ul>
@@ -24,28 +27,28 @@
         menus: [
           {
             link: {name: 'home'},
-            icon: 'index',
-            iconSelected: 'index-selected',
+            icon: '/static/images/shouye.png',
+            iconSelected: '/static/images/shouye-selected.png',
             text: '首页'
           }, {
             link: {name: 'stores-index'},
-            icon: 'stores',
-            iconSelected: 'stores-selected',
+            icon: '/static/images/stores.png',
+            iconSelected: '/static/images/stores-selected.png',
             text: '门店'
           }, {
             link: {name: 'shopping-index'},
-            icon: 'malls',
-            iconSelected: 'malls-selected',
+            icon: '/static/images/shop_normal@2x.png',
+            iconSelected: '/static/images/shop_selected@2x.png',
             text: '商城'
           }, {
             link: {name: 'order-index'},
-            icon: 'order',
-            iconSelected: 'order-selected',
+            icon: '/static/images/dingdan.png',
+            iconSelected: '/static/images/dingdan-selected.png',
             text: '订单'
           }, {
             link: {name: 'personal-center'},
-            icon: 'personal-center',
-            iconSelected: 'personal-center-selected',
+            icon: '/static/images/personal-center.png',
+            iconSelected: '/static/images/personal-center-selected.png',
             text: '我的'
           },
         ]
@@ -58,7 +61,7 @@
 </script>
 
 <style lang="stylus" scoped>
-  @import "../assets/common.styl"
+  @import "../assets/variable.styl"
   .foot
     position fixed
     bottom 0
@@ -80,36 +83,6 @@
           width px2rem(48px)
           height px2rem(48px)
           display inline-block
-          &.index
-            background url("../../static/images/shouye.png") no-repeat center
-            background-size px2rem(48px) px2rem(48px)
-          &.stores
-            background url("../../static/images/stores.png") no-repeat center
-            background-size px2rem(48px) px2rem(48px)
-          &.malls
-            background url("../../static/images/shop_normal@2x.png") no-repeat center
-            background-size px2rem(48px) px2rem(48px)
-          &.order
-            background: url("../../static/images/dingdan.png") no-repeat center
-            background-size: px2rem(48px) px2rem(48px)
-          &.personal-center
-            background url("../../static/images/personal-center.png") no-repeat center
-            background-size px2rem(48px) px2rem(48px)
-          &.index-selected
-            background url("../../static/images/shouye-selected.png") no-repeat center
-            background-size px2rem(48px) px2rem(48px)
-          &.stores-selected
-            background url("../../static/images/stores-selected.png") no-repeat center
-            background-size px2rem(48px) px2rem(48px)
-          &.malls-selected
-            background url("../../static/images/shop_selected@2x.png") no-repeat center
-            background-size px2rem(48px) px2rem(48px)
-          &.order-selected
-            background url("../../static/images/dingdan-selected.png") no-repeat center
-            background-size px2rem(48px) px2rem(48px)
-          &.personal-center-selected
-            background url("../../static/images/personal-center-selected.png") no-repeat center
-            background-size px2rem(48px) px2rem(48px)
         p
           margin-top px2rem(-8px)
 </style>

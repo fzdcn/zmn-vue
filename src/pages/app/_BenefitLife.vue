@@ -1,10 +1,10 @@
 <template>
   <!--惠生活-->
   <div>
-    <div v-if="benefitLife.length > 0" class="recommend bg-fff">
-      <div class="recommend-top bg-fff">
+    <div v-if="benefitLife.length > 0" class="recommend bg-white">
+      <div class="recommend-top bg-white">
         <dl>
-          <dt class="fc-4c4c4c">惠生活<span class="fc-00a84c">HUISHENGHUO</span></dt>
+          <dt class="dark-grey">惠生活<span class="dark-green">HUISHENGHUO</span></dt>
         </dl>
       </div>
       <div class="recommend-list">
@@ -16,9 +16,6 @@
           <div class="clear"></div>
         </div>
       </div>
-    </div>
-    <div class="company-slogan bg-e8e8e8 text-center">
-      <img src="static/images/home_word@2x.png" alt="公司口号">
     </div>
   </div>
 </template>
@@ -42,7 +39,7 @@
 </script>
 
 <style lang="stylus" scoped>
-  @import "../../assets/common.styl";
+  @import "../../assets/variable.styl";
   .recommend
     height auto
     margin px2rem(20px) px2rem(15px) 0
@@ -78,12 +75,4 @@
             margin-bottom px2rem(20px)
             img
               width px2rem(750px)
-
-  .company-slogan
-    height px2rem(128px)
-    line-height px2rem(128px)
-    margin-top px2rem(20px)
-    img
-      width: px2rem(490px)
-      height: px2rem(29px)
 </style>
