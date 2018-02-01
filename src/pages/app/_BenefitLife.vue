@@ -10,7 +10,7 @@
       <div class="recommend-list">
         <div class="recommend-list-img">
           <ul>
-            <li @click="jumpBenefitLifeDetail(item)" v-for="item in benefitLife">
+            <li @click="" v-for="item in benefitLife">
               <img v-lazy="item.cover" src="" alt=""></li>
           </ul>
           <div class="clear"></div>

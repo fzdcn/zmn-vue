@@ -10,19 +10,19 @@
             <img v-if="index == 1004" src="/static/images/hugong.png" :alt="item">
             <img v-if="index == 1002" src="/static/images/yuyingshi.png" :alt="item">
             <img v-if="index == 1001" src="/static/images/yuesao.png" :alt="item">
-            <p class="text-center black">{{ item }}</p>
+            <p class="text-center dark-grey">{{ item }}</p>
           </li>
         </a>
         <a href="javascript:void(0);">
           <li class="fl text-center" @click="">
             <img src="/static/images/yiyuanhuli.png" alt="医院护理">
-            <p class="textaling black">医院护理</p>
+            <p class="textaling dark-grey">医院护理</p>
           </li>
         </a>
         <a href="javascript:void(0);">
           <li class="fl text-center" @click="">
             <img src="/static/images/private_order@2x.png" alt="私人订制">
-            <p class="text-center black">私人订制</p>
+            <p class="text-center dark-grey">私人订制</p>
           </li>
         </a>
       </ul>

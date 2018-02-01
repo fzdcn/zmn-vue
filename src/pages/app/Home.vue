@@ -5,6 +5,7 @@
                :emptyIcon="null" :emptyBtnText="null" :emptyTip="''">
       <swiper slot="topContent" :bannerImg="bannerImg"></swiper>
       <domestic-service slot="topContent"></domestic-service>
+      <life-service slot="topContent"></life-service>
       <benefit-life slot="meScroll" slot-scope="props" :benefitLife="props.dataList"></benefit-life>
       <company-slogan slot="bottomContent"></company-slogan>
     </me-scroll>
@@ -18,6 +19,7 @@
   import Foot from '../../components/Footer';
   import BenefitLife from './_BenefitLife';
   import DomesticService from './_DomesticService';
+  import LifeService from './_LifeService'
   import CompanySlogan from './_CompanySlogan';
   import MeScroll from '../../components/MeScroll';
   import {pageScroll} from '../../config/functions';
@@ -29,6 +31,7 @@
       HeadTop,
       BenefitLife,
       DomesticService,
+      LifeService,
       CompanySlogan,
       MeScroll
     },
@@ -53,7 +56,6 @@
           type: 30
         }).then(({data}) => {
           this.bannerImg = data.values.length ? data.values : this.bannerImg;
-          console.log(this.bannerImg)
         }).catch((error) => {
           console.log(error);
         })
