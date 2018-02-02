@@ -1,5 +1,5 @@
 <template>
-  <div class="life-service bg-white">
+  <div v-if="lifeService.length" class="life-service bg-white">
     <div class="title bg-white">
       <dl>
         <dt class="dark-grey"><img src="/static/images/home_life@2x.png" alt="生活服务">生活服务</dt>
@@ -12,7 +12,7 @@
             <div class="service-list-modular">
               <ul>
                 <li v-for="(item,index) in lifeService">
-                  <a :href="'/wx/life-service/move-home.html?id='+ item.id">
+                  <a>
                     <i><img :src="item.image" alt="item.name"></i>
                     <p class="dark-grey">{{ item.name }}</p>
                   </a>

@@ -172,6 +172,74 @@ export function pageScroll(_this, pageSize, htmlContent, upAuto, emptyIcon, empt
   });
 }
 
+// 星星等级
+export const starLever = {
+  star: [
+    {
+      // 无星级
+      options: [
+        '/static/images/lever-no.png',
+        '/static/images/lever-no.png',
+        '/static/images/lever-no.png',
+        '/static/images/lever-no.png',
+        '/static/images/lever-no.png'
+      ]
+    },
+    {
+      // 1星级
+      options: [
+        '/static/images/lever-all.png',
+        '/static/images/lever-no.png',
+        '/static/images/lever-no.png',
+        '/static/images/lever-no.png',
+        '/static/images/lever-no.png'
+
+      ]
+    },
+    {
+      // 2星级
+      options: [
+        '/static/images/lever-all.png',
+        '/static/images/lever-all.png',
+        '/static/images/lever-no.png',
+        '/static/images/lever-no.png',
+        '/static/images/lever-no.png'
+
+      ]
+    },
+    {
+      // 3星级
+      options: [
+        '/static/images/lever-all.png',
+        '/static/images/lever-all.png',
+        '/static/images/lever-all.png',
+        '/static/images/lever-no.png',
+        '/static/images/lever-no.png'
+      ]
+    },
+    {
+      // 4星级
+      options: [
+        '/static/images/lever-all.png',
+        '/static/images/lever-all.png',
+        '/static/images/lever-all.png',
+        '/static/images/lever-all.png',
+        '/static/images/lever-no.png'
+      ]
+    },
+    {
+      // 5星级
+      options: [
+        '/static/images/lever-all.png',
+        '/static/images/lever-all.png',
+        '/static/images/lever-all.png',
+        '/static/images/lever-all.png',
+        '/static/images/lever-all.png'
+      ]
+    }
+  ]
+}
+
 export const SERVICE_NAME = {
   1005: '保洁',
   1006: '钟点工',

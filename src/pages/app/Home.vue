@@ -6,6 +6,7 @@
       <swiper slot="topContent" :bannerImg="bannerImg"></swiper>
       <domestic-service slot="topContent"></domestic-service>
       <life-service slot="topContent"></life-service>
+      <user-evaluate slot="topContent"></user-evaluate>
       <benefit-life slot="meScroll" slot-scope="props" :benefitLife="props.dataList"></benefit-life>
       <company-slogan slot="bottomContent"></company-slogan>
     </me-scroll>
@@ -19,6 +20,7 @@
   import Foot from '../../components/Footer';
   import BenefitLife from './_BenefitLife';
   import DomesticService from './_DomesticService';
+  import UserEvaluate from './_UserEvaluate'
   import LifeService from './_LifeService'
   import CompanySlogan from './_CompanySlogan';
   import MeScroll from '../../components/MeScroll';
@@ -32,6 +34,7 @@
       BenefitLife,
       DomesticService,
       LifeService,
+      UserEvaluate,
       CompanySlogan,
       MeScroll
     },
