@@ -3,7 +3,10 @@
     <div class="evaluate-title bg-white">
       <dl>
         <dt class="dark-grey"><img src="/static/images/home_evaluation@2x.png" alt="今日推荐">用户评价</dt>
-        <dd><a class="dark-grey" href="">更多<img src="/static/images/home_right.png" alt="更多"></a>
+        <dd>
+          <router-link class="dark-grey" :to="{path:'/home/domestic-service-evaluate'}">
+            更多<img src="/static/images/home_right.png" alt="更多">
+          </router-link>
         </dd>
       </dl>
     </div>

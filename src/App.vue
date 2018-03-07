@@ -11,6 +11,7 @@
 
 <script>
   import PageLoading from "./components/PageLoading";
+  import MeScroll from 'mescroll.js/mescroll.min';
   export default {
     components: {PageLoading},
     name: 'app'

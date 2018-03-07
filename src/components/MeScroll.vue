@@ -7,6 +7,9 @@
 </template>
 
 <script>
+  import MeScroll from 'mescroll.js/mescroll.min'
+  console.log(MeScroll)
+  import 'mescroll.js/mescroll.min.css';
   export default {
     name: 'MeScroll',
     data() {
@@ -15,7 +18,6 @@
         dataList: [],
       }
     },
-
     computed: {
       containerStyle() {
         return {
@@ -156,6 +158,6 @@
   }
 
   .mescroll .mescroll-upwarp {
-    margin-bottom: 1.7rem;
+    margin-bottom: 1.5rem;
   }
 </style>

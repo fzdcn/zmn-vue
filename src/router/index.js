@@ -17,6 +17,7 @@ const StoresIndex = () => import( '../pages/stores-index/StoresIndex');
 const PersonalCenter = () => import( '../pages/personal-center/PersonalCenter');
 const OrderIndex = () => import( '../pages/order-index/OrderIndex');
 const BenefitLife = () => import('../pages/app/benefit-life/Index');
+const DomesticServiceEvaluate = () => import('../pages/app/domestic-service-evaluate/Index');
 
 const routes = [
   {path: '/', redirect: {name: 'home'}},
@@ -26,10 +27,17 @@ const routes = [
   {path: '/forget-password', name: 'forget-password', component: ForgetPassword, meta: {auth: false}},
   {path: '/home', name: 'home', component: Home, meta: {auth: false, keepAlive: true}},
   {path: '/city', name: 'city', component: City, meta: {auth: false}},
+  {path: '/search', name: 'search', component: Search, meta: {auth: false}},
   {path: '/stores-index', name: 'stores-index', component: StoresIndex, meta: {auth: false}},
   {path: '/personal-center', name: 'personal-center', component: PersonalCenter, meta: {auth: true, keepAlive: true}},
   {path: '/order-index', name: 'order-index', component: OrderIndex, meta: {auth: true, keepAlive: true}},
-  {path: '/home/benefit-life-detail/:id', name: 'benefit-life-detail', component: BenefitLife, meta: {auth: false}}
+  {path: '/home/benefit-life-detail/:id', name: 'benefit-life-detail', component: BenefitLife, meta: {auth: false}},
+  {
+    path: '/home/domestic-service-evaluate',
+    name: 'DomesticServiceEvaluate',
+    component: DomesticServiceEvaluate,
+    meta: {auth: false, keepAlive: true}
+  }
 ];
 
 let router = new Router({
