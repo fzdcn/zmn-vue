@@ -4,6 +4,7 @@
       <router-view v-if="$route.meta.keepAlive"></router-view>
     </keep-alive>
     <router-view v-if="!$route.meta.keepAlive"></router-view>
+    <lg-preview></lg-preview>
     <page-loading></page-loading>
   </div>
 </template>

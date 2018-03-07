@@ -3,7 +3,7 @@
  */
 // API接口基础地址
 export const DEBUG = process.env.NODE_ENV !== 'production'
-export const API_BASE = DEBUG ? 'http://192.168.0.145/zhuomuniao/frontend/web/api/v2/' : ('http://' + window.location.host + '/api/v2')
+export const API_BASE = DEBUG ? 'http://192.168.0.164/zhuomuniao/frontend/web/api/v2/' : ('http://' + window.location.host + '/api/v2')
 export const QI_NIU_CDN_DOMAIN = 'cdn.yfcanshi.com'
 
 // 本地存储的文件信息相关，本地存储的信息内容【格式】有更新时更改次版本

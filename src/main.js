@@ -10,9 +10,11 @@ import store from './store';
 import VueLazyload from 'vue-lazyload';
 import {QI_NIU_CDN_DOMAIN} from './config/config';
 import 'mescroll.js/mescroll.min.css';
+import vuePicturePreview from 'vue-picture-preview';
 
 Vue.config.productionTip = false;
 
+Vue.use(vuePicturePreview);
 Vue.use(http);
 Vue.use(localStorage);
 Vue.use(VueLazyload, {

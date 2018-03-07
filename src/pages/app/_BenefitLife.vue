@@ -10,8 +10,11 @@
       <div class="recommend-list">
         <div class="recommend-list-img">
           <ul>
-            <li @click="" v-for="item in benefitLife">
-              <img v-lazy="item.cover" src="" alt=""></li>
+            <li v-for="item in benefitLife">
+              <router-link :to="{path:'/home/benefit-life-detail/' + item.id}">
+                <img v-lazy="item.cover" src="" alt="item.title">
+              </router-link>
+            </li>
           </ul>
           <div class="clear"></div>
         </div>

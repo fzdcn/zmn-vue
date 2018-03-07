@@ -24,7 +24,6 @@
   import LifeService from './_LifeService'
   import CompanySlogan from './_CompanySlogan';
   import MeScroll from '../../components/MeScroll';
-  import {pageScroll} from '../../config/functions';
   export default {
     name: 'Home',
     components: {

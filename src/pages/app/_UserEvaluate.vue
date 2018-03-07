@@ -7,7 +7,7 @@
         </dd>
       </dl>
     </div>
-    <div v-if="outerIndex == 3" v-for="(item,outerIndex) in homeServiceEvaluate" class="user-info bg-white">
+    <div v-if="outerIndex == 0" v-for="(item,outerIndex) in homeServiceEvaluate" class="user-info bg-white">
       <div class="user-evaluate-detail">
         <div class="user-avatar">
           <img class="openHeadImg"
@@ -27,11 +27,17 @@
           <img v-for="val in star[item.stars].options" class="fl" :src="val" alt="星级">
         </div>
         <div class="domestic-evaluate">
-          <img @click="openImg(index)" v-for="(val,index) in item.photos" :src="val" class="" alt="评价">
+          <!--<img @click="openImg(index)" v-for="(val,index) in item.photos" v-lazy="val" src="" class="" alt="评价">-->
+          <img v-for="(val,index) in item.photos" v-lazy="val" src=""
+               v-preview="val"
+               :src="val"
+               :key="index"
+               preview-title-enable="false"
+               preview-nav-enable="true">
         </div>
       </div>
     </div>
-    <vue-previewer ref="c1"></vue-previewer>
+    <!--<vue-previewer ref="ImgPreviewer"></vue-previewer>-->
   </div>
 </template>
 
@@ -52,7 +58,7 @@
     },
     methods: {
       openImg(index){
-        this.$refs.c1.photoSwipe(index);
+        this.$refs.ImgPreviewer.photoSwipe(index);
       },
       // 获取家政服务评价
       getHomeServiceEvaluate() {

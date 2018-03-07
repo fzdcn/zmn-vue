@@ -111,7 +111,7 @@
             },
             toTop: {
               src: "/static/images/mescroll-totop.png", // 默认滚动到1000px显示,可配置 offset 修改
-              offset: 250
+//              offset: 250
             },
             htmlNodata: this.htmlNoData,
             htmlLoading: this.htmlLoading,// 上拉加载中的布局

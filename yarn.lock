@@ -5061,6 +5061,10 @@ vue-loader@^13.3.0:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.6.0"
 
+vue-picture-preview@^1.1.0:
+  version "1.1.0"
+  resolved "http://registry.npm.taobao.org/vue-picture-preview/download/vue-picture-preview-1.1.0.tgz#11f21dff4abf7f07126787dde15c47effb0cf757"
+
 vue-router@^3.0.1:
   version "3.0.1"
   resolved "http://registry.npm.taobao.org/vue-router/download/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"

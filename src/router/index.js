@@ -16,6 +16,7 @@ const Search = () => import( '../pages/search/Search');
 const StoresIndex = () => import( '../pages/stores-index/StoresIndex');
 const PersonalCenter = () => import( '../pages/personal-center/PersonalCenter');
 const OrderIndex = () => import( '../pages/order-index/OrderIndex');
+const BenefitLife = () => import('../pages/app/benefit-life/Index');
 
 const routes = [
   {path: '/', redirect: {name: 'home'}},
@@ -27,7 +28,8 @@ const routes = [
   {path: '/city', name: 'city', component: City, meta: {auth: false}},
   {path: '/stores-index', name: 'stores-index', component: StoresIndex, meta: {auth: false}},
   {path: '/personal-center', name: 'personal-center', component: PersonalCenter, meta: {auth: true, keepAlive: true}},
-  {path: '/order-index', name: 'order-index', component: OrderIndex, meta: {auth: true, keepAlive: true}}
+  {path: '/order-index', name: 'order-index', component: OrderIndex, meta: {auth: true, keepAlive: true}},
+  {path: '/home/benefit-life-detail/:id', name: 'benefit-life-detail', component: BenefitLife, meta: {auth: false}}
 ];
 
 let router = new Router({
