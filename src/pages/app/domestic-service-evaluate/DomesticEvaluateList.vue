@@ -1,27 +1,35 @@
 <template>
-  <div>
-    <div class="user-info-detail bg-white">
-      <div v-for="item in homeServiceEvaluate" class="user-info bg-white">
-        <div class="user-evaluate-detail">
-          <div class="user-avatar">
-            <img alt="用户头像" v-lazy="item.head_image" src="">
-          </div>
-          <div class="service-type">
-            <p class="user-name black-grey">{{ item.username }}</p>
-            <p class="service-detail"><span class="service bg-dark-green">服务</span>
-              <span class="type">{{ item.service_name }}</span>
-              <span class="time">{{ item.created_at | moment('YYYY-MM-DD')}}</span>
-            </p>
-          </div>
+  <div class="user-info-detail bg-white">
+    <div v-for="(item,outerIndex) in homeServiceEvaluate" class="user-info bg-white">
+      <div class="user-evaluate-detail">
+        <div class="user-avatar">
+          <img alt="用户头像" v-lazy="item.head_image" src=""
+               v-preview="item.head_image"
+               :src="item.head_image"
+               :key="0"
+               preview-title-enable="false"
+               preview-nav-enable="false">
         </div>
-        <div class="evaluate-detail">
-          <p>{{ item.evaluate }}</p>
-          <div class="tar">
-            <img v-for="val in star[item.stars].options" class="fl" :src="val" alt="星级">
-          </div>
-          <div class="domestic-evaluate">
-            <img v-for="val in item.photos" v-lazy="val" src="" alt="评价">
-          </div>
+        <div class="service-type">
+          <p class="user-name black-grey">{{ item.username }}</p>
+          <p class="service-detail"><span class="service bg-dark-green">服务</span>
+            <span class="type">{{ item.service_name }}</span>
+            <span class="time">{{ item.created_at | moment('YYYY-MM-DD')}}</span>
+          </p>
+        </div>
+      </div>
+      <div class="evaluate-detail">
+        <p>{{ item.evaluate }}</p>
+        <div class="tar">
+          <img v-for="val in star[item.stars].options" class="fl" :src="val" alt="星级">
+        </div>
+        <div class="domestic-evaluate">
+          <img v-for="(val,index) in item.photos" v-lazy="val" src="" alt="评价"
+               v-preview="val"
+               :src="val"
+               :key="index"
+               preview-title-enable="false"
+               preview-nav-enable="true">
         </div>
       </div>
     </div>
@@ -29,10 +37,13 @@
 </template>
 
 <script>
-  import {starLever} from '../../../config/functions/index';
+  import {starLever} from '../../../config/functions/index'
+  import VuePreviewer from '../../../components/VuePreviewer'
   export default {
     name: 'DomesticEvaluateList',
-    components: {},
+    components: {
+      VuePreviewer
+    },
     data(){
       return {
         star: starLever.star
@@ -128,6 +139,7 @@
             width px2rem(124px)
             height px2rem(124px)
             margin px2rem(10px) px2rem(17px)
+
   .mescroll .mescroll-upwarp
     margin-bottom 1.7rem
 </style>
