@@ -77,7 +77,6 @@
     },
     mounted(){
       this.getHomeServiceEvaluate();
-      console.log(this.homeServiceEvaluate)
     }
   }
 </script>

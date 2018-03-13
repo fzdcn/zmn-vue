@@ -8,7 +8,6 @@
 
 <script>
   import MeScroll from 'mescroll.js/mescroll.min'
-  console.log(MeScroll)
   import 'mescroll.js/mescroll.min.css';
   export default {
     name: 'MeScroll',

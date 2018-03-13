@@ -6,11 +6,10 @@ import router from './router';
 import http from './config/plugins/http';
 import localStorage from './config/plugins/localStorage';
 import moment from 'moment';
-import store from './store';
+import store from './store/modules/index';
 import VueLazyload from 'vue-lazyload';
 import {QI_NIU_CDN_DOMAIN} from './config/config';
 import vuePicturePreview from 'vue-picture-preview';
-import MeScroll from 'mescroll.js/mescroll.min'
 Vue.config.productionTip = false;
 Vue.use(vuePicturePreview);
 Vue.use(http);
